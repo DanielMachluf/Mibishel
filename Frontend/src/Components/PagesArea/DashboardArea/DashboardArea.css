@@ -1,0 +1,30 @@
+.DashboardArea {
+    --area-paper: #f8f1e5;
+    --area-paper-soft: #fcf8f0;
+    --area-line: #dfcfb9;
+    --area-shadow: rgba(84, 61, 36, 0.14);
+    --area-sidebar: 300px;
+
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--area-sidebar) minmax(0, 1fr);
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 8% 12%, rgba(179, 127, 62, 0.10), transparent 28%),
+        linear-gradient(180deg, #fbf6ee 0%, var(--area-paper) 50%, #f6eddf 100%);
+}
+
+.DashboardArea__content {
+    min-width: 0;
+    grid-column: 2;
+}
+
+@media (max-width: 1080px) {
+    .DashboardArea {
+        grid-template-columns: 1fr;
+    }
+
+    .DashboardArea__content {
+        grid-column: 1;
+    }
+}

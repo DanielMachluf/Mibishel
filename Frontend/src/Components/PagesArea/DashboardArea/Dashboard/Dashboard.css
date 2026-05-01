@@ -1,0 +1,645 @@
+.Dashboard {
+    --dash-paper: #f8f1e5;
+    --dash-paper-soft: #fcf8f0;
+    --dash-card: rgba(255, 252, 245, 0.86);
+    --dash-ink: #2a2118;
+    --dash-muted: #705d49;
+    --dash-faint: #9b8872;
+    --dash-line: #dfcfb9;
+    --dash-line-soft: rgba(184, 158, 124, 0.28);
+    --dash-brown: #8b5524;
+    --dash-brown-dark: #6e3f18;
+    --dash-brown-soft: #efe2ce;
+    --dash-orange: #dd6a2f;
+    --dash-tiktok: #000000;
+    --dash-tiktok-cyan: #00f2ea;
+    --dash-tiktok-red: #ff0050;
+    --dash-instagram-a: #833ab4;
+    --dash-instagram-b: #e1306c;
+    --dash-instagram-c: #f77737;
+    --dash-instagram-d: #fcaf45;
+    --dash-facebook: #1877f2;
+    --dash-shadow: 0 18px 45px rgba(84, 61, 36, 0.12);
+
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    color: var(--dash-ink);
+    background:
+        radial-gradient(circle at 12% 16%, rgba(179, 127, 62, 0.10), transparent 28%),
+        radial-gradient(circle at 86% 10%, rgba(146, 101, 45, 0.11), transparent 30%),
+        radial-gradient(circle at 55% 92%, rgba(158, 113, 54, 0.08), transparent 26%),
+        linear-gradient(180deg, #fbf6ee 0%, var(--dash-paper) 48%, #f6eddf 100%);
+    font-family: "Inter", sans-serif;
+}
+
+.Dashboard::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.38;
+    background-image:
+        radial-gradient(rgba(107, 77, 42, 0.11) 0.7px, transparent 0.7px),
+        radial-gradient(rgba(107, 77, 42, 0.07) 0.7px, transparent 0.7px);
+    background-position: 0 0, 16px 18px;
+    background-size: 34px 34px, 42px 42px;
+}
+
+.Dashboard__page {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 1500px);
+    margin: 0 auto;
+    padding: clamp(28px, 4vw, 58px) clamp(18px, 4vw, 46px) 76px;
+}
+
+.Dashboard__composer {
+    position: relative;
+    width: min(100%, 1320px);
+    margin: 0 auto 36px;
+    padding: clamp(28px, 3.4vw, 48px);
+    overflow: hidden;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.48), transparent 44%),
+        var(--dash-card);
+    border: 1px solid var(--dash-line);
+    border-radius: 14px;
+    box-shadow:
+        var(--dash-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.Dashboard__hero {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    padding-bottom: clamp(30px, 4vw, 48px);
+}
+
+.Dashboard__heroDecor {
+    position: absolute;
+    top: 2px;
+    right: -6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(139, 85, 36, 0.4);
+    pointer-events: none;
+}
+
+.Dashboard__heroDecorMain {
+    width: 42px;
+    height: 42px;
+}
+
+.Dashboard__heroDecorAccent {
+    width: 24px;
+    height: 24px;
+}
+
+.Dashboard__greeting {
+    margin: 0;
+    color: var(--dash-brown);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.28rem, 1.8vw, 1.65rem);
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.Dashboard__hero h1 {
+    margin: 16px 0 22px;
+    color: var(--dash-ink);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.55rem, 2.3vw, 2.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 0;
+}
+
+.Dashboard__subtitle {
+    margin: 0;
+    color: #4e4236;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1rem, 1.28vw, 1.2rem);
+    font-style: italic;
+    font-weight: 700;
+}
+
+.Dashboard__inputCard {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) auto auto;
+    gap: 18px;
+    align-items: center;
+    padding-top: 28px;
+}
+
+.Dashboard__inputWrap,
+.Dashboard__searchWrap {
+    display: grid;
+    align-items: center;
+    background: rgba(255, 252, 245, 0.68);
+    border: 1px solid var(--dash-line);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.Dashboard__inputWrap {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 12px;
+    min-height: 58px;
+    padding: 0 17px;
+    border-radius: 9px;
+}
+
+.Dashboard__inputWrap:focus-within,
+.Dashboard__searchWrap:focus-within {
+    background: rgba(255, 252, 245, 0.94);
+    border-color: rgba(139, 85, 36, 0.56);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.76),
+        0 0 0 3px rgba(139, 85, 36, 0.10);
+}
+
+.Dashboard__inputWrap span,
+.Dashboard__searchWrap span {
+    color: var(--dash-muted);
+    font-size: 1.08rem;
+}
+
+.Dashboard__inputWrap svg,
+.Dashboard__searchWrap svg {
+    width: 18px;
+    height: 18px;
+    color: var(--dash-muted);
+}
+
+.Dashboard__inputWrap input,
+.Dashboard__searchWrap input {
+    width: 100%;
+    min-width: 0;
+    color: var(--dash-ink);
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 0.98rem;
+    font-weight: 720;
+}
+
+.Dashboard__inputWrap input::placeholder,
+.Dashboard__searchWrap input::placeholder {
+    color: #a08d76;
+    font-weight: 650;
+}
+
+.Dashboard__platformHints {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.Dashboard__platformHints button,
+.Dashboard__saveButton {
+    min-height: 56px;
+    border-radius: 9px;
+    font-weight: 900;
+}
+
+.Dashboard__platformIcon {
+    display: inline-grid;
+    place-items: center;
+    width: 46px;
+    min-height: 46px;
+    color: #ffffff;
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.Dashboard__platformIcon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.Dashboard__platformHints button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 96px;
+    padding: 0 22px;
+    color: var(--dash-ink);
+    background: rgba(255, 252, 245, 0.72);
+    border: 1px solid var(--dash-line);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    cursor: pointer;
+    transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.Dashboard__platformHints button:hover {
+    background: rgba(255, 252, 245, 0.96);
+    border-color: rgba(139, 85, 36, 0.42);
+    transform: translateY(-1px);
+}
+
+.Dashboard__platformHints button:disabled {
+    opacity: 0.64;
+    cursor: not-allowed;
+}
+
+.Dashboard__platformIcon--tiktok {
+    background: #141414;
+}
+
+.Dashboard__platformIcon--instagram {
+    background: linear-gradient(135deg, #f77737 0%, #e1306c 50%, #833ab4 100%);
+}
+
+.Dashboard__platformIcon--facebook {
+    background: #1877f2;
+}
+
+.Dashboard__saveButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 180px;
+    padding: 0 26px;
+    color: #fff9f1;
+    background: linear-gradient(180deg, #a76529, #7e491b);
+    border: 0;
+    box-shadow: 0 12px 24px rgba(112, 64, 24, 0.25);
+    font-size: 1rem;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: transform 160ms ease, opacity 160ms ease, box-shadow 160ms ease;
+}
+
+.Dashboard__saveButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(112, 64, 24, 0.31);
+}
+
+.Dashboard__saveButton:disabled {
+    opacity: 0.68;
+    transform: none;
+    cursor: not-allowed;
+}
+
+.Dashboard__error {
+    width: min(100%, 1320px);
+    margin: -16px auto 22px;
+}
+
+.Dashboard__collectionArea {
+    width: min(100%, 1320px);
+    margin: 0 auto 28px;
+}
+
+.Dashboard__collectionHeader {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--dash-line);
+}
+
+.Dashboard__collectionHeader h2 {
+    margin: 0;
+    color: var(--dash-ink);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.Dashboard__search {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) auto;
+    gap: 22px;
+    align-items: center;
+}
+
+.Dashboard__searchWrap {
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+    gap: 10px;
+    min-height: 52px;
+    padding: 0 16px;
+    border-radius: 10px;
+}
+
+.Dashboard__searchClear {
+    display: inline-grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    color: var(--dash-muted);
+    background: var(--dash-brown-soft);
+    border: 0;
+    border-radius: 50%;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.Dashboard__chips {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.Dashboard__chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 52px;
+    padding: 0 24px;
+    color: #4f4134;
+    background: rgba(255, 252, 245, 0.62);
+    border: 1px solid var(--dash-line);
+    border-radius: 999px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.66);
+    font-size: 0.95rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.Dashboard__chip svg {
+    width: 15px;
+    height: 15px;
+}
+
+.Dashboard__chip:hover {
+    transform: translateY(-1px);
+}
+
+.Dashboard__chip--all.Dashboard__chip--active {
+    color: var(--dash-brown-dark);
+    background: var(--dash-brown-soft);
+    border-color: rgba(139, 85, 36, 0.28);
+}
+
+.Dashboard__chip--tiktok.Dashboard__chip--active {
+    color: #ffffff;
+    background: var(--dash-tiktok);
+    border-color: transparent;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+.Dashboard__chip--instagram.Dashboard__chip--active {
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--dash-instagram-a), var(--dash-instagram-b), var(--dash-instagram-c));
+    border-color: transparent;
+    box-shadow: 0 10px 20px rgba(225, 48, 108, 0.18);
+}
+
+.Dashboard__chip--facebook.Dashboard__chip--active {
+    color: #ffffff;
+    background: var(--dash-facebook);
+    border-color: transparent;
+    box-shadow: 0 10px 20px rgba(24, 119, 242, 0.18);
+}
+
+.Dashboard__loading {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: var(--dash-brown-dark);
+    background: rgba(255, 252, 245, 0.72);
+    border: 1px solid var(--dash-line);
+    border-radius: 999px;
+    box-shadow: var(--dash-shadow);
+}
+
+.Dashboard__loading--page {
+    display: flex;
+    width: fit-content;
+    margin: 34px auto;
+}
+
+.Dashboard__loading .spinner {
+    width: 22px;
+    height: 22px;
+    border: 3px solid rgba(139, 85, 36, 0.18);
+    border-top-color: var(--dash-brown);
+    border-radius: 50%;
+    animation: dashboardSpin 0.8s linear infinite;
+}
+
+.Dashboard__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    width: min(100%, 1320px);
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.Dashboard__noResults,
+.Dashboard__empty {
+    display: grid;
+    justify-items: center;
+    width: min(100%, 460px);
+    margin: 34px auto 0;
+    padding: clamp(26px, 5vw, 40px);
+    color: var(--dash-ink);
+    text-align: center;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.44), transparent 42%),
+        var(--dash-card);
+    border: 1px solid var(--dash-line);
+    border-radius: 14px;
+    box-shadow: var(--dash-shadow);
+}
+
+.Dashboard__noResults p,
+.Dashboard__empty p {
+    max-width: 310px;
+    margin: 10px 0 22px;
+    color: var(--dash-muted);
+    font-weight: 750;
+    line-height: 1.45;
+}
+
+.Dashboard__emptyIllustration {
+    position: relative;
+    width: 104px;
+    height: 78px;
+    margin-bottom: 16px;
+    border-radius: 50% 50% 42% 42%;
+    background: linear-gradient(135deg, #f6be5c, #e58a3f);
+    box-shadow: inset 0 -8px 0 rgba(112, 64, 24, 0.11);
+}
+
+.Dashboard__emptyIllustration::before,
+.Dashboard__emptyIllustration::after {
+    content: "";
+    position: absolute;
+    top: 24px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #3d2e23;
+}
+
+.Dashboard__emptyIllustration::before {
+    left: 38px;
+}
+
+.Dashboard__emptyIllustration::after {
+    right: 38px;
+}
+
+.Dashboard__emptyIllustration span {
+    position: absolute;
+    left: 44px;
+    bottom: 23px;
+    width: 17px;
+    height: 9px;
+    border-bottom: 2px solid #3d2e23;
+    border-radius: 0 0 20px 20px;
+}
+
+.Dashboard__empty h2 {
+    margin: 0;
+    color: var(--dash-ink);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    line-height: 1;
+}
+
+.Dashboard__emptyButton {
+    min-height: 46px;
+    padding: 0 22px;
+    color: #fff9f1;
+    background: linear-gradient(180deg, #a76529, #7e491b);
+    border: 0;
+    border-radius: 9px;
+    box-shadow: 0 10px 22px rgba(112, 64, 24, 0.22);
+    font-weight: 900;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.Dashboard__emptyButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 26px rgba(112, 64, 24, 0.28);
+}
+
+@keyframes dashboardSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1240px) {
+    .Dashboard__inputCard {
+        grid-template-columns: minmax(280px, 1fr) auto;
+    }
+
+    .Dashboard__saveButton {
+        grid-column: 1 / -1;
+    }
+
+    .Dashboard__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .Dashboard__page {
+        padding-inline: 18px;
+    }
+
+    .Dashboard__composer {
+        padding: 26px 22px;
+    }
+
+    .Dashboard__hero {
+        padding-bottom: 26px;
+    }
+
+    .Dashboard__heroDecor {
+        top: -4px;
+        right: 0;
+    }
+
+    .Dashboard__inputCard,
+    .Dashboard__search {
+        grid-template-columns: 1fr;
+    }
+
+    .Dashboard__platformHints,
+    .Dashboard__chips {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 620px) {
+    .Dashboard__page {
+        padding: 18px 12px 48px;
+    }
+
+    .Dashboard__composer {
+        margin-bottom: 28px;
+        padding: 24px 16px;
+    }
+
+    .Dashboard__hero h1 {
+        font-size: clamp(1.3rem, 6vw, 1.75rem);
+    }
+
+    .Dashboard__platformHints {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .Dashboard__platformHints button {
+        min-width: 0;
+        padding-inline: 10px;
+    }
+
+    .Dashboard__platformIcon {
+        width: 100%;
+        min-height: 38px;
+        border-radius: 8px;
+        font-size: 1.05rem;
+    }
+
+    .Dashboard__platformIcon svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .Dashboard__collectionHeader h2 {
+        font-size: 2rem;
+    }
+
+    .Dashboard__chips {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .Dashboard__chip {
+        min-height: 44px;
+        padding-inline: 14px;
+    }
+
+    .Dashboard__grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        width: min(100%, 440px);
+    }
+}

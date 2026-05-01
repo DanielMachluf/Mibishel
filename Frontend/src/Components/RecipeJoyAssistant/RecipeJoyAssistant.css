@@ -1,0 +1,309 @@
+.RecipeJoyAssistant__launcher {
+    position: fixed;
+    right: clamp(18px, 4vw, 34px);
+    bottom: clamp(18px, 4vw, 34px);
+    z-index: 60;
+    display: grid;
+    place-items: center;
+    width: 68px;
+    height: 68px;
+    color: #FFFFFF;
+    background:
+        radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.26), transparent 28%),
+        linear-gradient(135deg, #96581e, #c07c38);
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 18px 44px rgba(110, 68, 18, 0.38);
+    font-weight: 900;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.RecipeJoyAssistant__launcher:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 22px 54px rgba(110, 68, 18, 0.46);
+}
+
+.RecipeJoyAssistant__launcher span {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border: 2px solid rgba(255, 255, 255, 0.62);
+    border-radius: 50%;
+    font-family: "Playfair Display", serif;
+    font-size: 1.05rem;
+}
+
+.RecipeJoyAssistant {
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    display: grid;
+    place-items: end;
+    padding: 18px;
+    background: rgba(17, 24, 39, 0.28);
+    backdrop-filter: blur(6px);
+    animation: joyBackdropIn 160ms ease;
+}
+
+.RecipeJoyAssistant__panel {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto auto;
+    width: min(100%, 430px);
+    height: min(720px, calc(100vh - 36px));
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(255, 250, 245, 0.78), #FFFFFF 32%),
+        #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.76);
+    border-radius: 28px;
+    box-shadow: 0 28px 86px rgba(17, 24, 39, 0.26);
+    animation: joyPanelIn 220ms ease;
+}
+
+.RecipeJoyAssistant__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.82);
+}
+
+.RecipeJoyAssistant__identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.RecipeJoyAssistant__identity > span {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #96581e, #c07c38);
+    border-radius: 50%;
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+    font-weight: 900;
+    box-shadow: 0 12px 26px rgba(110, 68, 18, 0.26);
+}
+
+.RecipeJoyAssistant__identity strong,
+.RecipeJoyAssistant__identity small {
+    display: block;
+}
+
+.RecipeJoyAssistant__identity strong {
+    color: #111827;
+    font-size: 1.05rem;
+    font-weight: 900;
+}
+
+.RecipeJoyAssistant__identity small {
+    margin-top: 2px;
+    color: #6B7280;
+    font-weight: 700;
+}
+
+.RecipeJoyAssistant__header > button {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    color: #6B7280;
+    background: #F3F4F6;
+    border: 0;
+    border-radius: 50%;
+    font-size: 1.45rem;
+    line-height: 1;
+    transition: background 160ms ease, color 160ms ease;
+}
+
+.RecipeJoyAssistant__header > button:hover {
+    color: #111827;
+    background: #E5E7EB;
+}
+
+.RecipeJoyAssistant__messages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+    padding: 18px;
+    overflow-y: auto;
+}
+
+.RecipeJoyAssistant__message {
+    max-width: 86%;
+    padding: 12px 14px;
+    border-radius: 18px;
+    animation: joyMessageIn 180ms ease;
+}
+
+.RecipeJoyAssistant__message--assistant {
+    align-self: flex-start;
+    color: #1F2937;
+    background: #F7F7F8;
+    border-bottom-left-radius: 6px;
+}
+
+.RecipeJoyAssistant__message--user {
+    align-self: flex-end;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #96581e, #c07c38);
+    border-bottom-right-radius: 6px;
+    box-shadow: 0 12px 24px rgba(110, 68, 18, 0.2);
+}
+
+.RecipeJoyAssistant__message p {
+    margin: 0;
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+.RecipeJoyAssistant__thinking {
+    display: flex;
+    gap: 5px;
+    padding: 5px 2px;
+}
+
+.RecipeJoyAssistant__thinking i {
+    width: 7px;
+    height: 7px;
+    background: #c07c38;
+    border-radius: 50%;
+    animation: joyThinking 700ms ease-in-out infinite;
+}
+
+.RecipeJoyAssistant__thinking i:nth-child(2) {
+    animation-delay: 110ms;
+}
+
+.RecipeJoyAssistant__thinking i:nth-child(3) {
+    animation-delay: 220ms;
+}
+
+.RecipeJoyAssistant__suggestions {
+    display: flex;
+    gap: 8px;
+    padding: 0 18px 12px;
+    overflow-x: auto;
+}
+
+.RecipeJoyAssistant__suggestions button {
+    flex: 0 0 auto;
+    min-height: 34px;
+    padding: 0 12px;
+    color: #D9471F;
+    background: #FFF0EB;
+    border: 1px solid rgba(255, 107, 53, 0.16);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.RecipeJoyAssistant__suggestions button:disabled {
+    cursor: not-allowed;
+    opacity: 0.58;
+}
+
+.RecipeJoyAssistant__form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 10px;
+    padding: 14px 18px 18px;
+    border-top: 1px solid rgba(229, 231, 235, 0.82);
+}
+
+.RecipeJoyAssistant__form textarea {
+    min-width: 0;
+    min-height: 46px;
+    max-height: 160px;
+    padding: 12px 14px;
+    color: #111827;
+    background: #F9FAFB;
+    border: 2px solid #E5E7EB;
+    border-radius: 16px;
+    outline: 0;
+    font-weight: 700;
+    line-height: 1.45;
+    resize: none;
+    overflow-y: hidden;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.RecipeJoyAssistant__form textarea:focus {
+    border-color: #c07c38;
+    box-shadow: 0 0 0 4px rgba(160, 100, 40, 0.12);
+}
+
+.RecipeJoyAssistant__form button {
+    align-self: end;
+    min-height: 46px;
+    padding: 0 18px;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #96581e, #c07c38);
+    border: 0;
+    border-radius: 999px;
+    font-weight: 900;
+}
+
+.RecipeJoyAssistant__form button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+@keyframes joyBackdropIn {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes joyPanelIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+}
+
+@keyframes joyMessageIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+}
+
+@keyframes joyThinking {
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-4px);
+    }
+}
+
+@media (max-width: 560px) {
+    .RecipeJoyAssistant {
+        align-items: end;
+        padding: 10px;
+    }
+
+    .RecipeJoyAssistant__panel {
+        height: min(720px, calc(100vh - 20px));
+        border-radius: 24px;
+    }
+
+    .RecipeJoyAssistant__launcher {
+        right: 18px;
+        bottom: 18px;
+    }
+}

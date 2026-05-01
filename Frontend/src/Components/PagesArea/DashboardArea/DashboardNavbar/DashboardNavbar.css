@@ -1,0 +1,416 @@
+.DashboardNavbar {
+    --nav-paper: #f8f1e5;
+    --nav-ink: #2a2118;
+    --nav-muted: #705d49;
+    --nav-line: #dfcfb9;
+    --nav-brown: #8b5524;
+    --nav-brown-dark: #6e3f18;
+    --nav-brown-soft: #efe2ce;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    align-self: start;
+    height: 100dvh;
+    overflow: hidden;
+    z-index: 12;
+    color: var(--nav-ink);
+}
+
+.DashboardNavbar__toggle,
+.DashboardNavbar__backdrop {
+    display: none;
+}
+
+.DashboardNavbar__panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 26px 34px 28px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 10% 8%, rgba(139, 85, 36, 0.08), transparent 28%),
+        linear-gradient(180deg, rgba(252, 248, 240, 0.96), rgba(248, 241, 229, 0.96));
+    border-right: 1px solid var(--nav-line);
+    box-shadow: 18px 0 46px rgba(84, 61, 36, 0.08);
+}
+
+.DashboardNavbar__panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.36;
+    background-image:
+        radial-gradient(rgba(107, 77, 42, 0.10) 0.7px, transparent 0.7px),
+        radial-gradient(rgba(107, 77, 42, 0.06) 0.7px, transparent 0.7px);
+    background-position: 0 0, 15px 18px;
+    background-size: 34px 34px, 42px 42px;
+}
+
+.DashboardNavbar__brand,
+.DashboardNavbar__nav,
+.DashboardNavbar__premium,
+.DashboardNavbar__account {
+    position: relative;
+    z-index: 1;
+}
+
+.DashboardNavbar__brand {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 10px;
+    margin: 4px auto 24px;
+    color: var(--nav-ink);
+    text-decoration: none;
+    text-align: center;
+}
+
+.DashboardNavbar__brandMark {
+    width: 72px;
+    height: 72px;
+}
+
+.DashboardNavbar__brandMark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.DashboardNavbar__brand strong {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.DashboardNavbar__nav {
+    display: grid;
+    gap: 12px;
+    margin-top: 0;
+}
+
+.DashboardNavbar__link {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    align-items: center;
+    min-height: 58px;
+    padding: 0 17px;
+    color: #3f352b;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    font-size: 1.06rem;
+    font-weight: 900;
+    text-decoration: none;
+    transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.DashboardNavbar__link svg {
+    color: currentColor;
+}
+
+.DashboardNavbar__link:hover {
+    color: var(--nav-brown-dark);
+    background: rgba(239, 226, 206, 0.52);
+    transform: translateX(2px);
+}
+
+.DashboardNavbar__link.active {
+    color: var(--nav-brown-dark);
+    background: var(--nav-brown-soft);
+    border-color: rgba(139, 85, 36, 0.16);
+    box-shadow:
+        0 10px 22px rgba(84, 61, 36, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.DashboardNavbar__premium {
+    margin-top: 22px;
+    margin-bottom: 26px;
+    padding: 26px;
+    color: var(--nav-brown-dark);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.46), transparent 44%),
+        rgba(255, 252, 245, 0.76);
+    border: 1px solid var(--nav-line);
+    border-radius: 12px;
+    box-shadow:
+        0 14px 34px rgba(84, 61, 36, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.70);
+}
+
+.DashboardNavbar__premium h2 {
+    margin: 18px 0 14px;
+    color: var(--nav-brown-dark);
+    font-family: "Playfair Display", serif;
+    font-size: 1.36rem;
+    line-height: 1.1;
+}
+
+.DashboardNavbar__premium p {
+    margin: 0;
+    color: var(--nav-muted);
+    font-size: 0.94rem;
+    font-weight: 680;
+    line-height: 1.55;
+}
+
+.DashboardNavbar__premium button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    margin-top: 24px;
+    padding: 0 18px;
+    color: #fff8ef;
+    background: linear-gradient(180deg, #a76529, #7e491b);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 12px 24px rgba(112, 64, 24, 0.22);
+    font-size: 0.94rem;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.DashboardNavbar__account {
+    display: grid;
+    gap: 10px;
+    margin-top: auto;
+    position: relative;
+    padding: 14px;
+    background: rgba(255, 252, 245, 0.74);
+    border: 1px solid rgba(139, 85, 36, 0.18);
+    border-radius: 14px;
+    box-shadow:
+        0 12px 28px rgba(84, 61, 36, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.66);
+}
+
+.DashboardNavbar__account::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 85, 36, 0.28), transparent);
+}
+
+.DashboardNavbar__accountIdentity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 50px;
+    padding: 0 4px;
+    width: 100%;
+    color: #392f25;
+}
+
+.DashboardNavbar__accountIdentity span {
+    display: inline-grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    color: #fff8ef;
+    background: linear-gradient(145deg, #a76529, #7e491b);
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 850;
+    box-shadow: 0 8px 16px rgba(112, 64, 24, 0.2);
+}
+
+.DashboardNavbar__accountIdentity div {
+    display: grid;
+    line-height: 1.1;
+}
+
+.DashboardNavbar__accountIdentity small {
+    color: var(--nav-muted);
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.DashboardNavbar__accountIdentity strong {
+    font-size: 1rem;
+    font-weight: 850;
+}
+
+.DashboardNavbar__logout {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 42px;
+    padding: 0 16px;
+    color: #fff8ef;
+    background: linear-gradient(180deg, #a76529, #7e491b);
+    border: 1px solid rgba(110, 63, 24, 0.55);
+    border-radius: 11px;
+    box-shadow: 0 10px 24px rgba(112, 64, 24, 0.24);
+    font-size: 0.9rem;
+    font-weight: 850;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.DashboardNavbar__logout:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(112, 64, 24, 0.3);
+}
+
+.DashboardNavbar__decor {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.DashboardNavbar__decorIcon {
+    position: absolute;
+    color: var(--nav-muted);
+    opacity: 0.16;
+}
+
+.DashboardNavbar__decorIcon--leaf {
+    right: -16px;
+    top: 29%;
+    width: 128px;
+    height: 128px;
+    transform: rotate(-17deg);
+}
+
+.DashboardNavbar__decorIcon--utensils {
+    left: -20px;
+    bottom: -12px;
+    width: 176px;
+    height: 176px;
+    transform: rotate(-14deg);
+}
+
+@media (max-width: 1080px) {
+    .DashboardNavbar {
+        position: fixed;
+        inset: 0;
+        top: 0;
+        z-index: 16;
+        min-height: 100vh;
+        height: auto;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        pointer-events: none;
+    }
+
+    .DashboardNavbar__toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 16px;
+        left: 14px;
+        z-index: 17;
+        width: 42px;
+        height: 42px;
+        color: #4b3e30;
+        background: rgba(255, 250, 241, 0.6);
+        border: 0;
+        border-radius: 50%;
+        box-shadow: 0 8px 20px rgba(84, 61, 36, 0.14);
+        pointer-events: auto;
+    }
+
+    .DashboardNavbar__toggle svg {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+        stroke-width: 2;
+        fill: none;
+    }
+
+    .DashboardNavbar__panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 15;
+        width: min(320px, 86vw);
+        min-height: 0;
+        padding: 20px 18px 24px;
+        transform: translateX(-105%);
+        opacity: 0;
+        transition: transform 230ms ease, opacity 230ms ease;
+        pointer-events: none;
+        overflow-y: auto;
+        border-right: 1px solid var(--nav-line);
+        box-shadow: 18px 0 46px rgba(84, 61, 36, 0.2);
+    }
+
+    .DashboardNavbar--open .DashboardNavbar__panel {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .DashboardNavbar__backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 14;
+        display: block;
+        border: 0;
+        background: rgba(26, 18, 11, 0.45);
+        backdrop-filter: blur(2px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 200ms ease;
+    }
+
+    .DashboardNavbar--open .DashboardNavbar__backdrop {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .DashboardNavbar__brand {
+        margin-bottom: 18px;
+    }
+
+    .DashboardNavbar__brand strong {
+        font-size: 1.6rem;
+    }
+
+    .DashboardNavbar__brandMark {
+        width: 60px;
+        height: 60px;
+    }
+
+    .DashboardNavbar__premium,
+    .DashboardNavbar__decor {
+        display: none;
+    }
+
+    .DashboardNavbar__account {
+        margin-top: 26px;
+        padding-top: 0;
+        padding: 12px;
+    }
+
+    .DashboardNavbar__account::before {
+        top: -11px;
+    }
+}
+
+@media (max-width: 620px) {
+    .DashboardNavbar {
+        padding-inline: 10px;
+    }
+
+    .DashboardNavbar__link {
+        min-height: 52px;
+        font-size: 0.95rem;
+    }
+}

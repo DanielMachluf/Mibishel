@@ -1,0 +1,7 @@
+.Layout {
+    min-height: 100vh;
+}
+
+.Layout__main {
+    min-height: calc(100vh - 76px);
+}

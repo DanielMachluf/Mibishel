@@ -7,7 +7,7 @@ import { DashboardArea } from "../../PagesArea/DashboardArea/DashboardArea";
 import { Dashboard } from "../../PagesArea/DashboardArea/Dashboard/Dashboard";
 import { Favorites } from "../../PagesArea/Favorites/Favorites";
 import { LandingPage } from "../../PagesArea/LandingPage/LandingPage";
-import { WhatIsDishshare } from "../../PagesArea/WhatIsDishshare/WhatIsDishshare";
+import { WhatIsMibishel } from "../../PagesArea/WhatIsMibishel/WhatIsMibishel";
 import { Page404 } from "../../PagesArea/Page404/Page404";
 import { Profile } from "../../PagesArea/Profile/Profile";
 import { RecipePage } from "../../PagesArea/RecipePage/RecipePage";
@@ -37,7 +37,7 @@ export function Routing() {
             <Route path="/favorites" element={<ProtectedRoute><DashboardArea><Favorites /></DashboardArea></ProtectedRoute>} />
             <Route path="/collections" element={<ProtectedRoute><DashboardArea><Collections /></DashboardArea></ProtectedRoute>} />
             <Route path="/profile" element={<ProtectedRoute><DashboardArea><Profile /></DashboardArea></ProtectedRoute>} />
-            <Route path="/about" element={<ProtectedRoute><DashboardArea><WhatIsDishshare /></DashboardArea></ProtectedRoute>} />
+            <Route path="/about" element={<ProtectedRoute><DashboardArea><WhatIsMibishel /></DashboardArea></ProtectedRoute>} />
             <Route path="/recipe/:id" element={<ProtectedRoute><RecipePage /></ProtectedRoute>} />
             <Route path="*" element={<Page404 />} />
         </Routes>

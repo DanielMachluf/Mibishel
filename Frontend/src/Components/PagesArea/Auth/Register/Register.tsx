@@ -28,7 +28,7 @@ export function Register() {
         try {
             const token = await authService.register({ firstName, lastName, email, password });
             authStore.login(token);
-            notify.success("Your Dishshare cookbook is ready.");
+            notify.success("Your Mibishel cookbook is ready.");
             navigate("/dashboard");
         }
         catch (err: unknown) {
@@ -62,7 +62,7 @@ export function Register() {
                         <span className="brand-logo__mark" aria-hidden="true">
                             <img src={logo} alt="" />
                         </span>
-                        <span className="brand-logo__word">Dishshare</span>
+                        <span className="brand-logo__word">Mibishel</span>
                     </Link>
                 </div>
                 <p className="AuthCard__slogan">Your social Cookbook</p>

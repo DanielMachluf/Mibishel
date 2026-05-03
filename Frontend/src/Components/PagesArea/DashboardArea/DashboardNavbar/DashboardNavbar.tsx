@@ -10,7 +10,7 @@ const navItems = [
     { to: "/favorites", label: "Favorites", icon: Heart },
     { to: "/collections", label: "Collections", icon: Folder },
     { to: "/profile", label: "Profile", icon: UserRound },
-    { to: "/about", label: "What is Dishshare?", icon: Info }
+    { to: "/about", label: "What is Mibishel?", icon: Info }
 ];
 
 const decorativeIcons = [
@@ -61,11 +61,11 @@ export function DashboardNavbar() {
             </button>
 
             <div className="DashboardNavbar__panel">
-                <NavLink to="/dashboard" className="DashboardNavbar__brand" aria-label="Dishshare dashboard" onClick={closeMenu}>
+                <NavLink to="/dashboard" className="DashboardNavbar__brand" aria-label="Mibishel dashboard" onClick={closeMenu}>
                     <span className="DashboardNavbar__brandMark" aria-hidden="true">
                         <img src={logo} alt="" />
                     </span>
-                    <strong>DishShare</strong>
+                    <strong>Mibishel</strong>
                 </NavLink>
 
                 <nav className="DashboardNavbar__nav">

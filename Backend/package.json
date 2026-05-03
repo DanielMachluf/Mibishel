@@ -1,10 +1,10 @@
 {
-    "name": "dishshare-backend",
+    "name": "mibishel-backend",
     "version": "1.0.0",
     "scripts": {
         "start": "nodemon --exec ts-node src/app.ts --quiet"
     },
-    "author": "Dishshare",
+    "author": "Mibishel",
     "devDependencies": {
         "@types/cors": "^2.8.19",
         "@types/express": "^5.0.6",

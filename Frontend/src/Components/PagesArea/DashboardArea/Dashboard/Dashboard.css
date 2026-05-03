@@ -205,7 +205,7 @@
 .Dashboard__saveButton {
     min-height: 56px;
     border-radius: 9px;
-    font-weight: 900;
+    font-weight: 650;
 }
 
 .Dashboard__platformIcon {
@@ -217,7 +217,7 @@
     border: 0;
     border-radius: 10px;
     font-size: 1.25rem;
-    font-weight: 900;
+    font-weight: 650;
     line-height: 1;
 }
 

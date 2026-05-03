@@ -3,6 +3,7 @@ import { Camera, ClipboardPaste, Leaf, Link2, Music2, Plus, Search, Sparkles, Th
 import { useNavigate } from "react-router-dom";
 import { RecipeCard } from "../../../CardsArea/RecipeCard/RecipeCard";
 import { RecipeCookingCard } from "../../../CardsArea/RecipeCookingCard/RecipeCookingCard";
+import { HowItWorks } from "../HowItWorks/HowItWorks";
 import type { RecipeModel } from "../../../../Models/recipe-model";
 import { recipeService } from "../../../../Services/RecipeService";
 import { authStore, useAuthStore } from "../../../../store/authStore";
@@ -151,7 +152,6 @@ export function Dashboard() {
                         <div className="Dashboard__platformHints" aria-label="Supported platforms">
                             <button type="button" onClick={pasteFromClipboard} disabled={isSaving} title="Paste from clipboard">
                                 <ClipboardPaste size={16} aria-hidden="true" />
-                                Paste
                             </button>
                             <span className="Dashboard__platformIcon Dashboard__platformIcon--tiktok"><Music2 size={18} aria-hidden="true" /></span>
                             <span className="Dashboard__platformIcon Dashboard__platformIcon--instagram"><Camera size={18} aria-hidden="true" /></span>
@@ -160,12 +160,14 @@ export function Dashboard() {
 
                         <button className="Dashboard__saveButton" disabled={isSaving}>
                             <Plus size={16} aria-hidden="true" />
-                            Save Recipe
+                            Analyze Recipe
                         </button>
                     </form>
                 </section>
 
                 {error && <p className="form-error Dashboard__error">{error}</p>}
+
+                <HowItWorks />
 
                 {!isLoadingRecipes && recipes.length > 0 && (
                     <section className="Dashboard__collectionArea">

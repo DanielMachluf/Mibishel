@@ -3,7 +3,6 @@ import { Camera, ClipboardPaste, Leaf, Link2, Music2, Plus, Search, Sparkles, Th
 import { useNavigate } from "react-router-dom";
 import { RecipeCard } from "../../../CardsArea/RecipeCard/RecipeCard";
 import { RecipeCookingCard } from "../../../CardsArea/RecipeCookingCard/RecipeCookingCard";
-import { HowItWorks } from "../HowItWorks/HowItWorks";
 import type { RecipeModel } from "../../../../Models/recipe-model";
 import { recipeService } from "../../../../Services/RecipeService";
 import { authStore, useAuthStore } from "../../../../store/authStore";
@@ -166,8 +165,6 @@ export function Dashboard() {
                 </section>
 
                 {error && <p className="form-error Dashboard__error">{error}</p>}
-
-                <HowItWorks />
 
                 {!isLoadingRecipes && recipes.length > 0 && (
                     <section className="Dashboard__collectionArea">

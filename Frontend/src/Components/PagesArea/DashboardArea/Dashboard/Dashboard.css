@@ -481,6 +481,20 @@
     box-shadow: inset 0 -8px 0 rgba(112, 64, 24, 0.11);
 }
 
+.Dashboard__emptyIllustration--lottie {
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 8px;
+}
+
+.Dashboard__emptyIllustration--lottie::before,
+.Dashboard__emptyIllustration--lottie::after {
+    display: none;
+}
+
 .Dashboard__emptyIllustration::before,
 .Dashboard__emptyIllustration::after {
     content: "";

@@ -1,6 +1,8 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
+import Lottie from "lottie-react";
 import { Camera, ClipboardPaste, Leaf, Link2, Music2, Plus, Search, Sparkles, ThumbsUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import selectFoodData from "../../../../assets/animations/select-food.json";
 import { RecipeCard } from "../../../CardsArea/RecipeCard/RecipeCard";
 import { RecipeCookingCard } from "../../../CardsArea/RecipeCookingCard/RecipeCookingCard";
 import type { RecipeModel } from "../../../../Models/recipe-model";
@@ -241,8 +243,8 @@ export function Dashboard() {
                     </section>
                 ) : (
                     <section className="Dashboard__empty">
-                        <div className="Dashboard__emptyIllustration" aria-hidden="true">
-                            <span />
+                        <div className="Dashboard__emptyIllustration Dashboard__emptyIllustration--lottie" aria-hidden="true">
+                            <Lottie animationData={selectFoodData} loop />
                         </div>
                         <h2>No recipes yet!</h2>
                         <p>Paste your first link above and let the magic happen</p>

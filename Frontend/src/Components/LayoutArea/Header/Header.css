@@ -7,14 +7,16 @@
     align-items: center;
     gap: 24px;
     min-height: 76px;
-    padding: 14px clamp(18px, 5vw, 72px);
-    background: rgba(255, 250, 245, 0.88);
-    border-bottom: 1px solid rgba(240, 232, 223, 0.8);
-    backdrop-filter: blur(18px);
+    padding: 10px clamp(18px, 5vw, 72px);
+    background: rgba(255, 252, 248, 0.9);
+    border-bottom: 1px solid rgba(223, 210, 194, 0.78);
+    backdrop-filter: blur(20px);
 }
 
 .Header__logo {
     justify-self: start;
+    gap: 10px;
+    font-size: 1.65rem;
 }
 
 .Header__nav {
@@ -22,9 +24,19 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    color: var(--text-secondary);
+    color: #65594f;
     font-size: 0.96rem;
     font-weight: 800;
+}
+
+.Header .brand-logo__mark {
+    width: 74px;
+    height: 50px;
+    flex-basis: 74px;
+}
+
+.Header .brand-logo__word {
+    color: #17120f;
 }
 
 .Header__nav a,
@@ -32,7 +44,7 @@
     min-height: 38px;
     padding: 9px 15px;
     border-radius: 50px;
-    color: var(--text-secondary);
+    color: #65594f;
     background: transparent;
     border: 0;
     transition: color 180ms ease, background 180ms ease, transform 180ms ease;
@@ -40,15 +52,15 @@
 
 .Header__nav a:hover,
 .Header__nav a.active {
-    color: var(--primary-dark);
-    background: #fff1e8;
+    color: #8f4a19;
+    background: #f3e5d5;
     transform: translateY(-1px);
 }
 
 .Header__register {
     color: #ffffff !important;
-    background: linear-gradient(135deg, #FF6B35, #FF8C61) !important;
-    box-shadow: 0 10px 22px rgba(255, 107, 53, 0.2);
+    background: linear-gradient(180deg, #b86c32, #9d551f) !important;
+    box-shadow: 0 12px 24px rgba(126, 67, 27, 0.22);
 }
 
 .Header__profile {

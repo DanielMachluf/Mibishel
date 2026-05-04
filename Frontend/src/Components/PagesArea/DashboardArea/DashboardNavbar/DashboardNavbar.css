@@ -1,16 +1,16 @@
 .DashboardNavbar {
-    --nav-paper: #f8f1e5;
-    --nav-ink: #2a2118;
-    --nav-muted: #705d49;
-    --nav-line: #dfcfb9;
-    --nav-brown: #8b5524;
-    --nav-brown-dark: #6e3f18;
-    --nav-brown-soft: #efe2ce;
+    --nav-paper: #f7f9f3;
+    --nav-ink: #20262c;
+    --nav-muted: #657069;
+    --nav-line: #e1e8dc;
+    --nav-brown: #2d6b58;
+    --nav-brown-dark: #184e43;
+    --nav-brown-soft: #e8f0dd;
 
     position: fixed;
     top: 0;
     left: 0;
-    width: 300px;
+    width: 340px;
     align-self: start;
     height: 100dvh;
     overflow: hidden;
@@ -28,16 +28,16 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 26px 34px 28px;
+    padding: 40px 28px 28px;
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior: contain;
     scrollbar-gutter: stable;
     background:
-        radial-gradient(circle at 10% 8%, rgba(139, 85, 36, 0.08), transparent 28%),
-        linear-gradient(180deg, rgba(252, 248, 240, 0.96), rgba(248, 241, 229, 0.96));
+        radial-gradient(circle at 8% 8%, rgba(95, 151, 81, 0.08), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 252, 0.96), rgba(248, 250, 244, 0.96));
     border-right: 1px solid var(--nav-line);
-    box-shadow: 18px 0 46px rgba(84, 61, 36, 0.08);
+    box-shadow: 18px 0 46px rgba(38, 73, 58, 0.08);
 }
 
 .DashboardNavbar__panel::-webkit-scrollbar {
@@ -45,7 +45,7 @@
 }
 
 .DashboardNavbar__panel::-webkit-scrollbar-thumb {
-    background: rgba(139, 85, 36, 0.32);
+    background: rgba(45, 107, 88, 0.32);
     border-radius: 999px;
 }
 
@@ -56,8 +56,8 @@
     pointer-events: none;
     opacity: 0.36;
     background-image:
-        radial-gradient(rgba(107, 77, 42, 0.10) 0.7px, transparent 0.7px),
-        radial-gradient(rgba(107, 77, 42, 0.06) 0.7px, transparent 0.7px);
+        radial-gradient(rgba(42, 105, 86, 0.09) 0.7px, transparent 0.7px),
+        radial-gradient(rgba(42, 105, 86, 0.05) 0.7px, transparent 0.7px);
     background-position: 0 0, 15px 18px;
     background-size: 34px 34px, 42px 42px;
 }
@@ -75,15 +75,15 @@
     justify-items: center;
     align-content: center;
     gap: 10px;
-    margin: 4px auto 24px;
+    margin: 4px auto 34px;
     color: var(--nav-ink);
     text-decoration: none;
     text-align: center;
 }
 
 .DashboardNavbar__brandMark {
-    width: 72px;
-    height: 72px;
+    width: 92px;
+    height: 76px;
 }
 
 .DashboardNavbar__brandMark img {
@@ -93,15 +93,15 @@
 }
 
 .DashboardNavbar__brand strong {
-    font-family: "Playfair Display", serif;
-    font-size: 2rem;
+    font-family: "Inter", sans-serif;
+    font-size: 2.35rem;
     font-weight: 900;
     line-height: 1;
 }
 
 .DashboardNavbar__nav {
     display: grid;
-    gap: 12px;
+    gap: 18px;
     margin-top: 0;
 }
 
@@ -109,12 +109,12 @@
     display: grid;
     grid-template-columns: 34px minmax(0, 1fr);
     align-items: center;
-    min-height: 58px;
-    padding: 0 17px;
-    color: #3f352b;
+    min-height: 68px;
+    padding: 0 22px;
+    color: #222930;
     border: 1px solid transparent;
-    border-radius: 9px;
-    font-size: 1.06rem;
+    border-radius: 14px;
+    font-size: 1.12rem;
     font-weight: 900;
     text-decoration: none;
     transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
@@ -126,45 +126,45 @@
 
 .DashboardNavbar__link:hover {
     color: var(--nav-brown-dark);
-    background: rgba(239, 226, 206, 0.52);
+    background: rgba(232, 240, 221, 0.52);
     transform: translateX(2px);
 }
 
 .DashboardNavbar__link.active {
     color: var(--nav-brown-dark);
     background: var(--nav-brown-soft);
-    border-color: rgba(139, 85, 36, 0.16);
+    border-color: rgba(45, 107, 88, 0.16);
     box-shadow:
-        0 10px 22px rgba(84, 61, 36, 0.08),
+        0 12px 28px rgba(37, 92, 72, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.62);
 }
 
 .DashboardNavbar__premium {
-    margin-top: 22px;
+    margin-top: 32px;
     margin-bottom: 26px;
-    padding: 26px;
-    color: var(--nav-brown-dark);
+    padding: 30px;
+    color: #f5fff5;
     background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.46), transparent 44%),
-        rgba(255, 252, 245, 0.76);
-    border: 1px solid var(--nav-line);
-    border-radius: 12px;
+        radial-gradient(circle at 16% 12%, rgba(167, 204, 118, 0.28), transparent 26%),
+        linear-gradient(145deg, #1e745f, #06493f);
+    border: 1px solid rgba(12, 83, 67, 0.24);
+    border-radius: 18px;
     box-shadow:
-        0 14px 34px rgba(84, 61, 36, 0.10),
+        0 14px 34px rgba(38, 73, 58, 0.10),
         inset 0 1px 0 rgba(255, 255, 255, 0.70);
 }
 
 .DashboardNavbar__premium h2 {
     margin: 18px 0 14px;
-    color: var(--nav-brown-dark);
-    font-family: "Playfair Display", serif;
-    font-size: 1.36rem;
+    color: #f5fff5;
+    font-family: "Inter", sans-serif;
+    font-size: 1.42rem;
     line-height: 1.1;
 }
 
 .DashboardNavbar__premium p {
     margin: 0;
-    color: var(--nav-muted);
+    color: rgba(245, 255, 245, 0.82);
     font-size: 0.94rem;
     font-weight: 680;
     line-height: 1.55;
@@ -177,11 +177,11 @@
     min-height: 48px;
     margin-top: 24px;
     padding: 0 18px;
-    color: #fff8ef;
-    background: linear-gradient(180deg, #a76529, #7e491b);
+    color: #1d5547;
+    background: linear-gradient(180deg, #f4fae8, #dfeecb);
     border: 0;
     border-radius: 8px;
-    box-shadow: 0 12px 24px rgba(112, 64, 24, 0.22);
+    box-shadow: 0 12px 24px rgba(28, 91, 74, 0.22);
     font-size: 0.94rem;
     font-weight: 900;
     cursor: pointer;
@@ -193,11 +193,11 @@
     margin-top: auto;
     position: relative;
     padding: 14px;
-    background: rgba(255, 252, 245, 0.74);
-    border: 1px solid rgba(139, 85, 36, 0.18);
+    background: rgba(255, 255, 252, 0.86);
+    border: 1px solid rgba(42, 105, 86, 0.13);
     border-radius: 14px;
     box-shadow:
-        0 12px 28px rgba(84, 61, 36, 0.08),
+        0 12px 28px rgba(38, 73, 58, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.66);
 }
 
@@ -208,7 +208,7 @@
     left: 16px;
     right: 16px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(139, 85, 36, 0.28), transparent);
+    background: linear-gradient(90deg, transparent, rgba(45, 107, 88, 0.28), transparent);
 }
 
 .DashboardNavbar__accountIdentity {
@@ -218,7 +218,7 @@
     min-height: 50px;
     padding: 0 4px;
     width: 100%;
-    color: #392f25;
+    color: #26322d;
 }
 
 .DashboardNavbar__accountIdentity span {
@@ -226,12 +226,12 @@
     place-items: center;
     width: 36px;
     height: 36px;
-    color: #fff8ef;
-    background: linear-gradient(145deg, #a76529, #7e491b);
+    color: #1d5547;
+    background: #dfeecb;
     border-radius: 50%;
     font-size: 0.9rem;
     font-weight: 850;
-    box-shadow: 0 8px 16px rgba(112, 64, 24, 0.2);
+    box-shadow: 0 8px 16px rgba(28, 91, 74, 0.2);
 }
 
 .DashboardNavbar__accountIdentity div {
@@ -260,11 +260,11 @@
     width: 100%;
     min-height: 42px;
     padding: 0 16px;
-    color: #fff8ef;
-    background: linear-gradient(180deg, #a76529, #7e491b);
-    border: 1px solid rgba(110, 63, 24, 0.55);
+    color: #f7fff7;
+    background: linear-gradient(180deg, #2f7460, #185345);
+    border: 1px solid rgba(24, 83, 69, 0.55);
     border-radius: 11px;
-    box-shadow: 0 10px 24px rgba(112, 64, 24, 0.24);
+    box-shadow: 0 10px 24px rgba(28, 91, 74, 0.24);
     font-size: 0.9rem;
     font-weight: 850;
     cursor: pointer;
@@ -273,7 +273,7 @@
 
 .DashboardNavbar__logout:hover {
     transform: translateY(-1px);
-    box-shadow: 0 14px 30px rgba(112, 64, 24, 0.3);
+    box-shadow: 0 14px 30px rgba(28, 91, 74, 0.3);
 }
 
 .DashboardNavbar__decor {
@@ -329,11 +329,11 @@
         z-index: 17;
         width: 42px;
         height: 42px;
-        color: #4b3e30;
-        background: rgba(255, 250, 241, 0.6);
+        color: #184e43;
+        background: rgba(255, 255, 252, 0.82);
         border: 0;
         border-radius: 50%;
-        box-shadow: 0 8px 20px rgba(84, 61, 36, 0.14);
+        box-shadow: 0 8px 20px rgba(38, 73, 58, 0.14);
         pointer-events: auto;
     }
 
@@ -360,7 +360,7 @@
         pointer-events: none;
         overflow-y: auto;
         border-right: 1px solid var(--nav-line);
-        box-shadow: 18px 0 46px rgba(84, 61, 36, 0.2);
+        box-shadow: 18px 0 46px rgba(38, 73, 58, 0.2);
     }
 
     .DashboardNavbar--open .DashboardNavbar__panel {

@@ -1,10 +1,10 @@
 .RecipeCard {
-    --card-paper: #fcf8f0;
-    --card-ink: #2a2118;
-    --card-muted: #6f5d49;
-    --card-line: #dfcfb9;
-    --card-line-soft: rgba(184, 158, 124, 0.32);
-    --card-brown: #8b5524;
+    --card-paper: #fbfcf8;
+    --card-ink: #20262c;
+    --card-muted: #5e6860;
+    --card-line: #e1e8dc;
+    --card-line-soft: rgba(111, 139, 111, 0.22);
+    --card-brown: #2d6b58;
     --card-tiktok: #000000;
     --card-instagram-a: #833ab4;
     --card-instagram-b: #e1306c;
@@ -17,11 +17,11 @@
     color: var(--card-ink);
     background:
         linear-gradient(145deg, rgba(255, 255, 255, 0.42), transparent 42%),
-        rgba(255, 252, 245, 0.88);
+        rgba(255, 255, 252, 0.94);
     border: 1px solid var(--card-line);
     border-radius: 12px;
     box-shadow:
-        0 16px 36px rgba(84, 61, 36, 0.12),
+        0 18px 38px rgba(38, 73, 58, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.74);
     cursor: pointer;
     transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
@@ -47,9 +47,9 @@
 
 .RecipeCard:hover {
     transform: translateY(-4px);
-    border-color: rgba(139, 85, 36, 0.36);
+    border-color: rgba(45, 107, 88, 0.36);
     box-shadow:
-        0 22px 44px rgba(84, 61, 36, 0.17),
+        0 22px 44px rgba(38, 73, 58, 0.15),
         inset 0 1px 0 rgba(255, 255, 255, 0.78);
 }
 
@@ -104,7 +104,7 @@
 }
 
 .RecipeCard__platform--tiktok span {
-    background: #141414;
+    background: #101418;
 }
 
 .RecipeCard__platform--instagram span {
@@ -121,8 +121,8 @@
     width: 34px;
     height: 34px;
     color: var(--card-brown);
-    background: rgba(255, 252, 245, 0.76);
-    border: 1px solid rgba(139, 85, 36, 0.28);
+    background: rgba(255, 255, 252, 0.78);
+    border: 1px solid rgba(42, 105, 86, 0.22);
     border-radius: 8px;
     font-size: 0.96rem;
     font-weight: 900;
@@ -188,10 +188,10 @@
     height: 178px;
     padding: 7px 7px 22px;
     overflow: visible;
-    background: #fffaf1;
-    border: 1px solid #e2d0b6;
+    background: #fbfcf8;
+    border: 1px solid #dce7d4;
     box-shadow:
-        0 14px 28px rgba(76, 53, 29, 0.14),
+        0 14px 28px rgba(38, 73, 58, 0.12),
         inset 0 0 0 1px rgba(255, 255, 255, 0.7);
     transform: rotate(-3deg);
 }
@@ -259,7 +259,7 @@
 .RecipeCard__fact > span {
     display: inline-grid;
     place-items: center;
-    color: #8f775f;
+    color: #66846c;
 }
 
 .RecipeCard__fact > span svg {
@@ -292,7 +292,7 @@
 .RecipeCard__fact--carbs strong,
 .RecipeCard__fact--fats strong,
 .RecipeCard__fact--servings strong {
-    color: #5f503f;
+    color: #33433b;
 }
 
 .RecipeCard__ingredientsBlock {
@@ -308,10 +308,10 @@
     align-items: center;
     gap: 7px;
     padding: 7px 9px;
-    background: rgba(255, 252, 245, 0.96);
-    border: 1px solid rgba(139, 85, 36, 0.28);
+    background: rgba(255, 255, 252, 0.96);
+    border: 1px solid rgba(42, 105, 86, 0.22);
     border-radius: 999px;
-    box-shadow: 0 10px 20px rgba(84, 61, 36, 0.16);
+    box-shadow: 0 10px 20px rgba(38, 73, 58, 0.14);
 }
 
 .RecipeCard__confirm span {

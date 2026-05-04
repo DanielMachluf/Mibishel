@@ -10,17 +10,17 @@
     color: #FFFFFF;
     background:
         radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.26), transparent 28%),
-        linear-gradient(135deg, #96581e, #c07c38);
+        linear-gradient(135deg, #2f7460, #5f9f5e);
     border: 0;
     border-radius: 50%;
-    box-shadow: 0 18px 44px rgba(110, 68, 18, 0.38);
+    box-shadow: 0 18px 44px rgba(28, 91, 74, 0.38);
     font-weight: 900;
     transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .RecipeJoyAssistant__launcher:hover {
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 22px 54px rgba(110, 68, 18, 0.46);
+    box-shadow: 0 22px 54px rgba(28, 91, 74, 0.46);
 }
 
 .RecipeJoyAssistant__launcher span {
@@ -82,12 +82,12 @@
     width: 46px;
     height: 46px;
     color: #FFFFFF;
-    background: linear-gradient(135deg, #96581e, #c07c38);
+    background: linear-gradient(135deg, #2f7460, #5f9f5e);
     border-radius: 50%;
     font-family: "Playfair Display", serif;
     font-size: 1.35rem;
     font-weight: 900;
-    box-shadow: 0 12px 26px rgba(110, 68, 18, 0.26);
+    box-shadow: 0 12px 26px rgba(28, 91, 74, 0.26);
 }
 
 .RecipeJoyAssistant__identity strong,
@@ -152,9 +152,9 @@
 .RecipeJoyAssistant__message--user {
     align-self: flex-end;
     color: #FFFFFF;
-    background: linear-gradient(135deg, #96581e, #c07c38);
+    background: linear-gradient(135deg, #2f7460, #5f9f5e);
     border-bottom-right-radius: 6px;
-    box-shadow: 0 12px 24px rgba(110, 68, 18, 0.2);
+    box-shadow: 0 12px 24px rgba(28, 91, 74, 0.2);
 }
 
 .RecipeJoyAssistant__message p {
@@ -174,7 +174,7 @@
 .RecipeJoyAssistant__thinking i {
     width: 7px;
     height: 7px;
-    background: #c07c38;
+    background: #5f9f5e;
     border-radius: 50%;
     animation: joyThinking 700ms ease-in-out infinite;
 }
@@ -198,9 +198,9 @@
     flex: 0 0 auto;
     min-height: 34px;
     padding: 0 12px;
-    color: #D9471F;
-    background: #FFF0EB;
-    border: 1px solid rgba(255, 107, 53, 0.16);
+    color: #2d6b58;
+    background: #e8f0dd;
+    border: 1px solid rgba(45, 107, 88, 0.16);
     border-radius: 999px;
     font-size: 0.8rem;
     font-weight: 800;
@@ -238,7 +238,7 @@
 }
 
 .RecipeJoyAssistant__form textarea:focus {
-    border-color: #c07c38;
+    border-color: #5f9f5e;
     box-shadow: 0 0 0 4px rgba(160, 100, 40, 0.12);
 }
 
@@ -247,7 +247,7 @@
     min-height: 46px;
     padding: 0 18px;
     color: #FFFFFF;
-    background: linear-gradient(135deg, #96581e, #c07c38);
+    background: linear-gradient(135deg, #2f7460, #5f9f5e);
     border: 0;
     border-radius: 999px;
     font-weight: 900;

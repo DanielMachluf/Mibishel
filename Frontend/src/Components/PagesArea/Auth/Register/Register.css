@@ -21,7 +21,7 @@
 .Register__visual {
     background:
         radial-gradient(circle at 30% 22%, rgba(255, 248, 232, 0.94), transparent 52%),
-        linear-gradient(160deg, #fef7ec, #f4dfc3);
+        linear-gradient(160deg, #fbfcf8, #dfead4);
     display: flex;
     align-items: center;
     justify-content: center;

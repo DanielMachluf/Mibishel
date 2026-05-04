@@ -1,16 +1,16 @@
 .LandingPage {
-    --landing-ink: #241914;
-    --landing-muted: #665b52;
-    --landing-caramel: #a65f28;
-    --landing-caramel-dark: #874714;
-    --landing-border: #eadbca;
-    --landing-paper: #fffaf3;
+    --landing-ink: #20262c;
+    --landing-muted: #5d6860;
+    --landing-caramel: #2d6b58;
+    --landing-caramel-dark: #174d42;
+    --landing-border: #e1e8dc;
+    --landing-paper: #fbfcf8;
     overflow: hidden;
     color: var(--landing-ink);
     background:
         radial-gradient(circle at 9% 8%, rgba(255, 255, 255, 0.94), transparent 31rem),
-        radial-gradient(circle at 87% 12%, rgba(197, 151, 102, 0.18), transparent 34rem),
-        linear-gradient(180deg, #fffaf4 0%, #fff7ee 48%, #f7ebdc 100%);
+        radial-gradient(circle at 87% 12%, rgba(121, 161, 97, 0.18), transparent 34rem),
+        linear-gradient(180deg, #fbfcf8 0%, #f6f8f1 48%, #eaf1df 100%);
 }
 
 .LandingPage__hero {
@@ -21,7 +21,7 @@
     gap: clamp(38px, 6vw, 94px);
     min-height: calc(100vh - 76px);
     padding: clamp(58px, 8vw, 104px) clamp(22px, 7vw, 88px) clamp(56px, 7vw, 92px);
-    border-bottom: 1px solid rgba(226, 210, 192, 0.72);
+    border-bottom: 1px solid rgba(225, 232, 220, 0.72);
 }
 
 .LandingPage__heroContent {
@@ -38,7 +38,7 @@
     font-size: clamp(3.8rem, 6.7vw, 7.25rem);
     line-height: 0.92;
     letter-spacing: 0;
-    color: #211713;
+    color: #20262c;
 }
 
 .LandingPage__heroContent h1 span {
@@ -71,15 +71,15 @@
 }
 
 .LandingPage__primaryCta {
-    color: #fffaf3;
-    background: linear-gradient(180deg, #b86b2f 0%, #9d551e 100%);
-    box-shadow: 0 18px 34px rgba(124, 70, 28, 0.25);
+    color: #f7fff7;
+    background: linear-gradient(180deg, #2f7460 0%, #185345 100%);
+    box-shadow: 0 18px 34px rgba(28, 91, 74, 0.25);
 }
 
 .LandingPage__secondaryCta {
-    color: #8a4a1f;
-    background: rgba(255, 250, 243, 0.74);
-    border: 1px solid rgba(178, 119, 69, 0.28);
+    color: #174d42;
+    background: rgba(255, 255, 252, 0.78);
+    border: 1px solid rgba(42, 105, 86, 0.22);
     box-shadow: none;
 }
 
@@ -100,10 +100,10 @@
     width: 38px;
     height: 38px;
     margin-left: -8px;
-    border: 3px solid #fff8ef;
+    border: 3px solid #fbfcf8;
     border-radius: 50%;
-    color: #fffaf3;
-    background: linear-gradient(140deg, #b57443, #5f7d4a);
+    color: #f7fff7;
+    background: linear-gradient(140deg, #2d6b58, #8bad60);
     font-size: 0.78rem;
     font-weight: 900;
 }
@@ -127,13 +127,13 @@
 
 .LandingPage__stars strong {
     margin-left: 7px;
-    color: #4d4138;
+    color: #34423c;
     font-size: 0.92rem;
 }
 
 .LandingPage__proof p {
     margin: 2px 0 0;
-    color: #81756b;
+    color: #68746c;
     font-size: 0.9rem;
     font-weight: 700;
 }
@@ -145,7 +145,7 @@
     justify-self: end;
     aspect-ratio: 0.92;
     border-radius: 28px;
-    box-shadow: 0 28px 70px rgba(69, 42, 24, 0.22);
+    box-shadow: 0 28px 70px rgba(38, 73, 58, 0.2);
     animation: landingFloat 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 100ms both;
 }
 
@@ -165,10 +165,10 @@
     gap: 14px;
     width: min(280px, 46%);
     padding: 19px 20px;
-    border: 1px solid rgba(227, 209, 188, 0.9);
+    border: 1px solid rgba(225, 232, 220, 0.9);
     border-radius: 16px;
-    background: rgba(255, 250, 242, 0.91);
-    box-shadow: 0 18px 38px rgba(87, 54, 26, 0.14);
+    background: rgba(255, 255, 252, 0.92);
+    box-shadow: 0 18px 38px rgba(38, 73, 58, 0.13);
     backdrop-filter: blur(16px);
     animation: noteDrift 6s ease-in-out infinite;
 }
@@ -186,14 +186,14 @@
 }
 
 .LandingPage__floatingNote strong {
-    color: #3b2a20;
+    color: #26342f;
     font-size: 0.87rem;
     line-height: 1.3;
 }
 
 .LandingPage__floatingNote span {
     margin-top: 6px;
-    color: #675b52;
+    color: #5d6860;
     font-size: 0.78rem;
     font-weight: 600;
     line-height: 1.45;
@@ -221,7 +221,7 @@
     position: relative;
     padding: clamp(66px, 8vw, 92px) clamp(22px, 7vw, 88px);
     text-align: center;
-    border-bottom: 1px solid rgba(226, 210, 192, 0.66);
+    border-bottom: 1px solid rgba(225, 232, 220, 0.66);
 }
 
 .LandingPage__sectionKicker {
@@ -250,18 +250,18 @@
     gap: 18px;
     width: min(260px, 70vw);
     margin: 22px auto 0;
-    color: rgba(166, 95, 40, 0.62);
+    color: rgba(45, 107, 88, 0.62);
 }
 
 .LandingPage__sectionFlourish::before,
 .LandingPage__sectionFlourish::after {
     content: "";
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(166, 95, 40, 0.32));
+    background: linear-gradient(90deg, transparent, rgba(45, 107, 88, 0.32));
 }
 
 .LandingPage__sectionFlourish::after {
-    background: linear-gradient(90deg, rgba(166, 95, 40, 0.32), transparent);
+    background: linear-gradient(90deg, rgba(45, 107, 88, 0.32), transparent);
 }
 
 .LandingPage__sectionFlourish svg {
@@ -285,7 +285,7 @@
     left: 10%;
     right: 10%;
     height: 1px;
-    background: repeating-linear-gradient(90deg, rgba(197, 151, 102, 0.42) 0 8px, transparent 8px 15px);
+    background: repeating-linear-gradient(90deg, rgba(111, 139, 111, 0.42) 0 8px, transparent 8px 15px);
 }
 
 .LandingPage__step {
@@ -303,11 +303,11 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    color: #fffaf3;
+    color: #f7fff7;
     background: var(--landing-caramel);
     font-size: 0.8rem;
     font-weight: 900;
-    box-shadow: 0 10px 20px rgba(128, 74, 31, 0.18);
+    box-shadow: 0 10px 20px rgba(28, 91, 74, 0.18);
 }
 
 .LandingPage__stepIcon {
@@ -315,10 +315,10 @@
     place-items: center;
     width: 96px;
     height: 96px;
-    border: 1px solid rgba(218, 198, 176, 0.86);
+    border: 1px solid rgba(225, 232, 220, 0.9);
     border-radius: 50%;
     color: var(--landing-caramel);
-    background: rgba(255, 250, 243, 0.78);
+    background: rgba(255, 255, 252, 0.82);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86);
     transition: transform 180ms ease, box-shadow 180ms ease;
 }
@@ -337,7 +337,7 @@
 .LandingPage__step h3,
 .LandingPage__featureCard h3 {
     margin: 24px 0 0;
-    color: #32231b;
+    color: #26342f;
     font-size: 1rem;
     line-height: 1.3;
 }
@@ -345,7 +345,7 @@
 .LandingPage__step p {
     max-width: 230px;
     margin: 12px auto 0;
-    color: #6d6259;
+    color: #5d6860;
     font-size: 0.92rem;
     font-weight: 600;
     line-height: 1.6;
@@ -354,8 +354,8 @@
 .LandingPage__features {
     padding-bottom: 42px;
     background:
-        radial-gradient(circle at 8% 20%, rgba(255, 255, 255, 0.7), transparent 28rem),
-        linear-gradient(180deg, rgba(255, 250, 243, 0.36), rgba(248, 235, 219, 0.72));
+        radial-gradient(circle at 8% 20%, rgba(255, 255, 255, 0.72), transparent 28rem),
+        linear-gradient(180deg, rgba(251, 252, 248, 0.42), rgba(234, 241, 223, 0.72));
 }
 
 .LandingPage__featureGrid {
@@ -370,12 +370,12 @@
     min-height: 232px;
     padding: 32px 28px;
     text-align: left;
-    border: 1px solid rgba(228, 212, 194, 0.88);
+    border: 1px solid rgba(225, 232, 220, 0.9);
     border-radius: 14px;
     background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 250, 242, 0.86)),
         var(--landing-paper);
-    box-shadow: 0 20px 44px rgba(92, 54, 25, 0.08);
+    box-shadow: 0 20px 44px rgba(38, 73, 58, 0.08);
     transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
@@ -392,7 +392,7 @@
     height: 52px;
     border-radius: 12px;
     color: var(--landing-caramel);
-    background: #f4e7d8;
+    background: #e8f0dd;
 }
 
 .LandingPage__featureCard svg {
@@ -403,7 +403,7 @@
 
 .LandingPage__featureCard p {
     margin: 14px 0 0;
-    color: #675b52;
+    color: #5d6860;
     font-size: 0.92rem;
     font-weight: 600;
     line-height: 1.65;
@@ -432,12 +432,12 @@
     gap: clamp(30px, 6vw, 72px);
     margin: clamp(48px, 7vw, 78px) clamp(22px, 7vw, 88px);
     padding: clamp(28px, 5vw, 50px);
-    border: 1px solid rgba(226, 207, 185, 0.9);
+    border: 1px solid rgba(225, 232, 220, 0.9);
     border-radius: 22px;
     background:
         radial-gradient(circle at 22% 24%, rgba(255, 255, 255, 0.86), transparent 22rem),
-        linear-gradient(112deg, #f7e8d6 0%, #fff9f0 52%, #f3dfc7 100%);
-    box-shadow: 0 26px 64px rgba(91, 55, 27, 0.12);
+        linear-gradient(112deg, #e8f0dd 0%, #fbfcf8 52%, #dfead4 100%);
+    box-shadow: 0 26px 64px rgba(38, 73, 58, 0.12);
 }
 
 .LandingPage__ctaImage {
@@ -446,7 +446,7 @@
     overflow: hidden;
     background:
         radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.8), transparent 16rem),
-        #efe0cd;
+        #e8f0dd;
 }
 
 .LandingPage__ctaImage img {
@@ -486,7 +486,7 @@
 .LandingPage__finePrint {
     display: block;
     margin-top: 18px;
-    color: #827468;
+    color: #68746c;
     font-size: 0.84rem;
     font-weight: 700;
 }
@@ -516,7 +516,7 @@
     display: flex;
     align-items: center;
     gap: clamp(18px, 3vw, 42px);
-    color: #675b52;
+    color: #5d6860;
     font-size: 0.88rem;
     font-weight: 700;
 }
@@ -532,13 +532,13 @@
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    color: #6b5747;
+    color: #5d6860;
     transition: color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
 .LandingPage__social span:hover {
     color: var(--landing-caramel);
-    background: #f1e2d1;
+    background: #e8f0dd;
     transform: translateY(-2px);
 }
 

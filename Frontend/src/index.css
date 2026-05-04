@@ -1,18 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap");
 
 :root {
-    --primary: #FF6B35;
-    --primary-dark: #E55A26;
-    --secondary: #2C2C2C;
-    --background: #FFFAF5;
+    --primary: #2D6B58;
+    --primary-dark: #174D42;
+    --secondary: #20262C;
+    --background: #F6F7F0;
     --surface: #FFFFFF;
-    --text-primary: #1A1A1A;
-    --text-secondary: #6B6B6B;
-    --border: #F0E8DF;
-    --success: #4CAF50;
+    --text-primary: #20262C;
+    --text-secondary: #5D6860;
+    --border: #E1E8DC;
+    --success: #5F9F5E;
     --error: #E53935;
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    --shadow-strong: 0 18px 46px rgba(70, 33, 10, 0.16);
+    --shadow: 0 4px 20px rgba(38, 73, 58, 0.08);
+    --shadow-strong: 0 18px 46px rgba(38, 73, 58, 0.16);
 }
 
 * {
@@ -32,8 +32,8 @@ body {
     font-family: "Inter", sans-serif;
     color: var(--text-primary);
     background:
-        radial-gradient(circle at top left, rgba(255, 107, 53, 0.12), transparent 34rem),
-        linear-gradient(180deg, #fffaf5 0%, #fff4ea 100%);
+        radial-gradient(circle at top left, rgba(121, 161, 97, 0.12), transparent 34rem),
+        linear-gradient(180deg, #fbfcf8 0%, #eef3e7 100%);
 }
 
 button,
@@ -117,8 +117,8 @@ img {
 
 .primary-button {
     color: #ffffff;
-    background: linear-gradient(135deg, #FF6B35, #FF8C61);
-    box-shadow: 0 12px 24px rgba(255, 107, 53, 0.24);
+    background: linear-gradient(135deg, #2D6B58, #5F9F5E);
+    box-shadow: 0 12px 24px rgba(45, 107, 88, 0.24);
 }
 
 .primary-button:hover,
@@ -137,8 +137,8 @@ img {
 
 .secondary-button {
     color: var(--primary-dark);
-    background: #fff2ea;
-    border: 1px solid rgba(255, 107, 53, 0.18);
+    background: #e8f0dd;
+    border: 1px solid rgba(45, 107, 88, 0.18);
 }
 
 .ghost-button {
@@ -161,7 +161,7 @@ img {
 .spinner {
     width: 22px;
     height: 22px;
-    border: 3px solid rgba(255, 107, 53, 0.18);
+    border: 3px solid rgba(45, 107, 88, 0.18);
     border-top-color: var(--primary);
     border-radius: 50%;
     animation: spin 800ms linear infinite;

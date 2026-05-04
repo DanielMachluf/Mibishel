@@ -1,8 +1,9 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import Lottie from "lottie-react";
-import { Camera, ClipboardPaste, Leaf, Link2, Music2, Plus, Search, Sparkles, ThumbsUp } from "lucide-react";
+import { Camera, ClipboardPaste, Link2, Music2, Plus, Search, Sparkles, ThumbsUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import selectFoodData from "../../../../assets/animations/select-food.json";
+import healthyPlatePng from "../../../../assets/PNG/—Pngtree—healthy food plate with fruits_20850628.png";
 import { RecipeCard } from "../../../CardsArea/RecipeCard/RecipeCard";
 import { RecipeCookingCard } from "../../../CardsArea/RecipeCookingCard/RecipeCookingCard";
 import type { RecipeModel } from "../../../../Models/recipe-model";
@@ -132,9 +133,12 @@ export function Dashboard() {
                         <p className="Dashboard__subtitle">Paste a link and we&apos;ll do the rest.</p>
 
                         <div className="Dashboard__heroDecor" aria-hidden="true">
-                            <Leaf className="Dashboard__heroDecorMain" />
                             <Sparkles className="Dashboard__heroDecorAccent" />
                         </div>
+                    </div>
+
+                    <div className="Dashboard__foodDecor" aria-hidden="true">
+                        <img className="Dashboard__foodDecorPlate" src={healthyPlatePng} alt="" />
                     </div>
 
                     <form className="Dashboard__inputCard" onSubmit={saveRecipe}>

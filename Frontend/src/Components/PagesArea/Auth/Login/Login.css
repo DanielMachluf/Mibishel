@@ -21,7 +21,7 @@
 .Login__visual {
     background:
         radial-gradient(circle at 28% 18%, rgba(255, 248, 232, 0.94), transparent 54%),
-        linear-gradient(160deg, #fef7ec, #f4dfc3);
+        linear-gradient(160deg, #fbfcf8, #dfead4);
     display: flex;
     align-items: flex-end;
     justify-content: center;

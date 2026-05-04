@@ -8,8 +8,8 @@
     gap: 24px;
     min-height: 76px;
     padding: 10px clamp(18px, 5vw, 72px);
-    background: rgba(255, 252, 248, 0.9);
-    border-bottom: 1px solid rgba(223, 210, 194, 0.78);
+    background: rgba(255, 255, 252, 0.9);
+    border-bottom: 1px solid rgba(225, 232, 220, 0.78);
     backdrop-filter: blur(20px);
 }
 
@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    color: #65594f;
+    color: #5d6860;
     font-size: 0.96rem;
     font-weight: 800;
 }
@@ -36,7 +36,7 @@
 }
 
 .Header .brand-logo__word {
-    color: #17120f;
+    color: #20262c;
 }
 
 .Header__nav a,
@@ -44,7 +44,7 @@
     min-height: 38px;
     padding: 9px 15px;
     border-radius: 50px;
-    color: #65594f;
+    color: #5d6860;
     background: transparent;
     border: 0;
     transition: color 180ms ease, background 180ms ease, transform 180ms ease;
@@ -52,15 +52,15 @@
 
 .Header__nav a:hover,
 .Header__nav a.active {
-    color: #8f4a19;
-    background: #f3e5d5;
+    color: #174d42;
+    background: #e8f0dd;
     transform: translateY(-1px);
 }
 
 .Header__register {
     color: #ffffff !important;
-    background: linear-gradient(180deg, #b86c32, #9d551f) !important;
-    box-shadow: 0 12px 24px rgba(126, 67, 27, 0.22);
+    background: linear-gradient(180deg, #2f7460, #185345) !important;
+    box-shadow: 0 12px 24px rgba(28, 91, 74, 0.22);
 }
 
 .Header__profile {

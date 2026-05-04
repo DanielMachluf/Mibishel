@@ -2,15 +2,15 @@
     position: relative;
     min-height: 338px;
     overflow: hidden;
-    color: #2a2118;
+    color: #20262c;
     background:
         linear-gradient(145deg, rgba(255, 255, 255, 0.42), transparent 42%),
-        rgba(255, 252, 245, 0.88);
-    border: 1px solid #dfcfb9;
-    border-left: 4px solid #8b5524;
+        rgba(255, 255, 252, 0.92);
+    border: 1px solid #e1e8dc;
+    border-left: 4px solid #2d6b58;
     border-radius: 12px;
     box-shadow:
-        0 16px 36px rgba(84, 61, 36, 0.12),
+        0 16px 36px rgba(38, 73, 58, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.74);
 }
 
@@ -22,11 +22,11 @@
     height: 162px;
     overflow: hidden;
     background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 252, 245, 0.68), rgba(255, 255, 255, 0)),
-        linear-gradient(135deg, #efe2ce, #f8f1e5);
+        linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(251, 252, 248, 0.68), rgba(255, 255, 255, 0)),
+        linear-gradient(135deg, #e8f0dd, #f6f7f0);
     background-size: 220px 100%, 100% 100%;
-    border: 1px solid #dfcfb9;
-    box-shadow: 0 10px 20px rgba(84, 61, 36, 0.10);
+    border: 1px solid #e1e8dc;
+    box-shadow: 0 10px 20px rgba(38, 73, 58, 0.1);
     transform: rotate(-3deg);
     animation: cookingShimmer 1.15s ease-in-out infinite;
 }
@@ -56,7 +56,7 @@
 .RecipeCookingCard__body p {
     grid-column: 2;
     margin: 0;
-    color: #4b4035;
+    color: #52605a;
     font-size: 1.16rem;
     font-weight: 900;
     line-height: 1.35;
@@ -75,7 +75,7 @@
     display: block;
     width: 38%;
     height: 100%;
-    background: linear-gradient(90deg, #8b5524, #dd6a2f);
+    background: linear-gradient(90deg, #2d6b58, #7ead60);
     border-radius: inherit;
     animation: cookingProgress 1.1s ease-in-out infinite;
 }

@@ -74,22 +74,22 @@
     display: grid;
     justify-items: center;
     align-content: center;
-    gap: 10px;
-    margin: 4px auto 34px;
+    gap: 12px;
+    margin: 2px auto 34px;
     color: var(--nav-ink);
     text-decoration: none;
     text-align: center;
 }
 
 .DashboardNavbar__brandMark {
-    width: 92px;
-    height: 76px;
+    width: 132px;
+    height: 112px;
 }
 
 .DashboardNavbar__brandMark img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .DashboardNavbar__brand strong {

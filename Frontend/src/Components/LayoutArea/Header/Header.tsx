@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useAuthStore } from "../../../store/authStore";
-import logo from "../../../assets/logo.svg";
+import logo from "../../../assets/PNG/Joyi-logo.png";
 import "./Header.css";
 
 export function Header() {

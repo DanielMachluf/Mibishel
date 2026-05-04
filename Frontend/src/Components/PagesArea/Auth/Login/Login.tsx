@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { authService } from "../../../../Services/AuthService";
 import { authStore } from "../../../../store/authStore";
 import { notify } from "../../../../Utils/Notify";
-import logo from "../../../../assets/logo.svg";
+import logo from "../../../../assets/PNG/Joyi-logo.png";
 import loginWomenSvg from "../../../../assets/Svg/login-women.svg";
 import foodVloggerData from "../../../../assets/animations/food-vlogger.json";
 import "../Auth.css";

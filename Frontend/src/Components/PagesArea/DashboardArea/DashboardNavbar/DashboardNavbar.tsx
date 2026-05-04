@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, Crown, Folder, Heart, Home, Info, Leaf, LogOut, UserRound, UtensilsCrossed } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
-import logo from "../../../../assets/logo.svg";
+import logo from "../../../../assets/PNG/Joyi-logo.png";
 import { authStore, useAuthStore } from "../../../../store/authStore";
 import "./DashboardNavbar.css";
 

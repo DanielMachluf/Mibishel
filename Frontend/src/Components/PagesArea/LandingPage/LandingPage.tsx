@@ -13,7 +13,7 @@ import {
     ThumbsUp,
     UtensilsCrossed
 } from "lucide-react";
-import logo from "../../../assets/logo.svg";
+import logo from "../../../assets/PNG/Joyi-logo.png";
 import chatBotIllustration from "../../../assets/Svg/Chat bot-amico.svg";
 import healthyFoodIllustration from "../../../assets/Svg/Eating healthy food-cuate.svg";
 import recipeBookIllustration from "../../../assets/Svg/login-recipe-book.svg";

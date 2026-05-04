@@ -3,6 +3,7 @@ import type { RecipeContext } from "../../Models/ai-model";
 import type { RecipeModel } from "../../Models/recipe-model";
 import { aiService } from "../../Services/AiService";
 import { notify } from "../../Utils/Notify";
+import joyAssistantImage from "../../assets/PNG/joyi-favicon-and-ai.png";
 import "./RecipeJoyAssistant.css";
 
 interface RecipeJoyAssistantProps {
@@ -27,6 +28,7 @@ const suggestions = [
 
 export function RecipeJoyAssistant({ recipe }: RecipeJoyAssistantProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const [isWelcomeTipVisible, setIsWelcomeTipVisible] = useState(true);
     const [question, setQuestion] = useState("");
     const [isAsking, setIsAsking] = useState(false);
     const [messages, setMessages] = useState<ChatMessage[]>([
@@ -143,12 +145,28 @@ export function RecipeJoyAssistant({ recipe }: RecipeJoyAssistantProps) {
 
     return (
         <>
+            {!isOpen && isWelcomeTipVisible && (
+                <aside className="RecipeJoyAssistant__welcomeTip" aria-label="Joy assistant introduction">
+                    <p>Hi! I&apos;m Joy, your recipe assistant. Ask me about swaps, prep, and nutrition.</p>
+                    <button
+                        type="button"
+                        aria-label="Close Joy intro"
+                        onClick={() => setIsWelcomeTipVisible(false)}
+                    >
+                        x
+                    </button>
+                </aside>
+            )}
+
             <button
                 className="RecipeJoyAssistant__launcher"
-                onClick={() => setIsOpen(true)}
+                onClick={() => {
+                    setIsOpen(true);
+                    setIsWelcomeTipVisible(false);
+                }}
                 aria-label="Ask Joy about this recipe"
             >
-                <span>Joy</span>
+                <img src={joyAssistantImage} alt="" />
             </button>
 
             {isOpen && (
@@ -156,7 +174,9 @@ export function RecipeJoyAssistant({ recipe }: RecipeJoyAssistantProps) {
                     <div className="RecipeJoyAssistant__panel">
                         <header className="RecipeJoyAssistant__header">
                             <div className="RecipeJoyAssistant__identity">
-                                <span>J</span>
+                                <span>
+                                    <img src={joyAssistantImage} alt="" />
+                                </span>
                                 <div>
                                     <strong>Joy</strong>
                                     <small>Recipe assistant</small>

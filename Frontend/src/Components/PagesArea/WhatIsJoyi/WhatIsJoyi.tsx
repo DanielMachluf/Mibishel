@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Bookmark, ChefHat, Code2, ExternalLink, Flame, Leaf, Link2, MessageCircle, Sparkles, UtensilsCrossed, Zap } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import creatorImage from "../../../assets/PNG/me.jpeg";
 import "./WhatIsJoyi.css";
 
 const steps = [
@@ -154,7 +155,9 @@ export function WhatIsJoyi() {
             {/* ── Creator card ─────────────────────────────────── */}
             <section className="WID__section WID__section--alt">
                 <AnimatedSection className="WID__creator">
-                    <div className="WID__creatorAvatar" aria-hidden="true">DM</div>
+                    <div className="WID__creatorAvatar">
+                        <img src={creatorImage} alt="Daniel Machluf" />
+                    </div>
                     <div className="WID__creatorBody">
                         <h2 className="WID__creatorName">Daniel Mac</h2>
                         <p className="WID__creatorRole">Full-Stack AI Developer · 21 · Tel Aviv</p>

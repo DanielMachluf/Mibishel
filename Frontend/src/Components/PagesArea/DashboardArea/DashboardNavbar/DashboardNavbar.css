@@ -74,29 +74,22 @@
     display: grid;
     justify-items: center;
     align-content: center;
-    gap: 12px;
-    margin: 2px auto 34px;
+    gap: 0;
+    margin: 0 auto 25px;
     color: var(--nav-ink);
     text-decoration: none;
     text-align: center;
 }
 
 .DashboardNavbar__brandMark {
-    width: 132px;
-    height: 112px;
+    width: 250px;
+    height: 250px;
 }
 
 .DashboardNavbar__brandMark img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-}
-
-.DashboardNavbar__brand strong {
-    font-family: "Inter", sans-serif;
-    font-size: 2.35rem;
-    font-weight: 900;
-    line-height: 1;
 }
 
 .DashboardNavbar__nav {
@@ -388,16 +381,12 @@
     }
 
     .DashboardNavbar__brand {
-        margin-bottom: 18px;
-    }
-
-    .DashboardNavbar__brand strong {
-        font-size: 1.6rem;
+        margin-bottom: 26px;
     }
 
     .DashboardNavbar__brandMark {
-        width: 60px;
-        height: 60px;
+        width: min(178px, 68vw);
+        height: 134px;
     }
 
     .DashboardNavbar__premium,

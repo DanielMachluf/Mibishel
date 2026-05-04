@@ -65,7 +65,6 @@ export function DashboardNavbar() {
                     <span className="DashboardNavbar__brandMark" aria-hidden="true">
                         <img src={logo} alt="" />
                     </span>
-                    <strong>Joyi</strong>
                 </NavLink>
 
                 <nav className="DashboardNavbar__nav">

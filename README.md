@@ -10,27 +10,51 @@ The project is split into a React/Vite frontend, an Express/TypeScript backend, 
 
 ## Screenshots
 
+### Landing Page
+
+![Landing Page](Screenshots/landing-page.png)
+
+The public landing page opens with a bold hero — **"Save Every Recipe You Love"** — and three floating feature callouts overlaid on a food photography backdrop: *Save from any platform*, *AI does the magic*, and *Your recipes, your way*. The top navigation bar keeps things minimal with **Home**, **Login**, and a prominent **Get Started** CTA. Social proof sits below the hero copy with a 4.9-star rating and a row of avatar icons, establishing trust before the user signs up.
+
+---
+
+### Register Page
+
+![Register Page](Screenshots/register-page.png)
+
+New users land on a clean, centered registration layout. The left column sets the tone — *"Create your recipe collection"* with a short tagline — while the form card in the center collects first name, last name, email, and password under the Joyi logo. A decorative cookbook illustration on the right reinforces the personal-cookbook concept. Existing users can jump straight to login via the **Already saving recipes? Login** link at the bottom.
+
+---
+
 ### Dashboard
 
-![Dashboard](Screenshots/Dashboard.png)
+![Dashboard](Screenshots/new-dashboard.png)
 
-The main dashboard gives each user a personal recipe collection. A single input bar accepts TikTok, Instagram, or Facebook links — paste a URL, hit **Save Recipe**, and the n8n scraping workflow handles the rest. Saved recipes appear as cards below, each showing the platform source, a polaroid-style thumbnail, and a quick nutrition summary (calories, protein, carbs, fats, servings). A sidebar provides navigation, a premium upgrade prompt, and quick access to the user account.
+The main workspace for every user. A persistent sidebar holds navigation links (Dashboard, Favorites, Collections, Profile, What is Joyi?), a **Upgrade to Premium** prompt, and the signed-in account badge. The content area opens with a personalised greeting and a recipe count at a glance. A single input bar accepts TikTok, Instagram, and Facebook links — paste a URL and hit **Analyze Recipe** to kick off the scraping workflow. Saved recipes appear below as cards, each showing the source platform badge, a polaroid-style thumbnail, recipe name, and a full macro summary (calories, protein, carbs, fats, servings). Platform filter chips and a search bar sit above the grid for quick browsing.
 
 ---
 
 ### Recipe Page
 
-![Recipe Page](Screenshots/RecipePage.png)
+![Recipe Page](Screenshots/new-recipe-page.png)
 
-Opening a recipe card expands into a full detail view. The page shows the recipe title, platform badge, serving count, and total calories at a glance, followed by a short summary paragraph. Three panels below cover **nutrition** (with a toggle between total recipe and per-serving values and animated progress bars), **ingredients** as a clean bulleted list, and **instructions** as numbered steps. A floating **Joy** button in the bottom-right corner opens the AI assistant panel for recipe-specific questions.
+Opening any recipe card expands into a full detail view. The page leads with the recipe title in a large serif heading, a polaroid thumbnail, and at-a-glance metadata — platform badge, serving count, and total calories. A short summary paragraph sits below. Three side-by-side panels fill the lower half: a **Nutrition** card with a Total Recipe / Per Serving toggle and animated macro progress bars, an **Ingredients** list, and numbered **Instructions** steps. A floating Joy launcher in the bottom-right corner shows a welcome tip and opens the AI assistant with a single click.
+
+---
+
+### Joy — AI Recipe Assistant
+
+![Joy Assistant](Screenshots/joyi-assistant.png)
+
+Joy is Joyi's built-in recipe assistant, accessible from every recipe page. The chat panel opens with Joy's avatar and a context-aware greeting tied to the current recipe. Users can type any question or tap a suggested quick-reply chip — *How can I make this healthier?*, *What can I substitute?* — and Joy responds with recipe-specific advice powered by the n8n AI workflow. The input field at the bottom accepts freeform questions about swaps, prep techniques, macros, and more.
 
 ---
 
 ### n8n Automation Workflow
 
-![n8n Workflow](Screenshots/n8n.png)
+![n8n Workflow](Screenshots/n8n-explain.png)
 
-The scraping and AI workflows live entirely in n8n. The recipe workflow starts at a **ScrapeRecipe Webhook**, passes the link to a web scraper, routes it through a platform switch (TikTok / Instagram / Facebook caption extractors), checks for valid output, then calls two AI steps in sequence — one to summarise the recipe and one to extract nutrition values — before reformatting everything into a single JSON object and returning it to the backend via **Respond to Webhook**. A separate, simpler workflow handles the **AskAI Webhook**: it receives the question and recipe context, passes both to an OpenAI chat model with simple memory, and responds directly.
+Both automation pipelines live entirely in n8n. The **Recipe Scraping** workflow (top) starts at the ScrapeRecipe Webhook, scrapes the social page, routes the raw HTML through a platform Switch node into separate TikTok, Instagram, and Facebook caption extractors, validates the output with an If gate, then runs two sequential AI steps — one for the recipe summary and one for nutrition extraction — before reformatting everything into a single JSON object and returning it via Respond to Webhook. The **AI Assistant** workflow (bottom) is leaner: the Askai Webhook feeds the user's question and recipe context into an AI Agent node backed by an OpenAI Chat Model with Simple Memory, then responds directly.
 
 ---
 

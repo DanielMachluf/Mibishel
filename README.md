@@ -6,6 +6,8 @@ Joyi is a full-stack recipe collection app built around a simple idea: paste a r
 
 The project is split into a React/Vite frontend, an Express/TypeScript backend, a MySQL database layer, and n8n workflows that handle recipe scraping and AI responses.
 
+**Live demo:** [joyi-project.web.app](https://joyi-project.web.app)
+
 ---
 
 ## Screenshots
@@ -75,7 +77,7 @@ Both automation pipelines live entirely in n8n. The **Recipe Scraping** workflow
 ## Project Structure
 
 ```text
-HeldyLady/
+Joyi/
 ├── Backend/
 │   ├── src/
 │   │   ├── 2-utils/          # config, database access, crypto, n8n parsing
@@ -264,9 +266,13 @@ npm run build
 
 ## Database
 
-The backend expects a MySQL database. The `Database/` folder is currently reserved for schema scripts, but no SQL file is present in this project snapshot.
+The backend expects a MySQL database. The `Database/` folder contains `JoyiDB.sql` with the full schema. To set up locally, import it into MySQL:
 
-A compatible schema should include at least:
+```bash
+mysql -u root -p < Database/JoyiDB.sql
+```
+
+The schema includes at least:
 
 ```sql
 create database if not exists joyi;
@@ -484,15 +490,15 @@ interface RecipeModel {
 
 ## Current Notes
 
-- The backend package name still says `northwind-rest-api`; the frontend package name still says `northwind`. The app itself is built as Joyi.
-- `Database/schema.sql` contains the local MySQL schema used by the backend.
+- `Database/JoyiDB.sql` contains the full MySQL schema.
 - `Backend/.env.example` documents the required local environment variables.
 - The n8n workflows are required for the core save-recipe and ask-Joy features to work.
+- The frontend is deployed on Firebase at [joyi-project.web.app](https://joyi-project.web.app); the backend must be running separately for data features to function.
 
 ---
 
 ## Suggested Next Improvements
 
-- Rename package metadata from the old Northwind names to Joyi.
 - Add automated tests for the n8n parser and service validation.
 - Add request rate limiting around auth and n8n webhook routes.
+- Deploy the backend and configure production environment variables so the live Firebase frontend is fully functional.

@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Bookmark, ChefHat, Code2, ExternalLink, Flame, Leaf, Link2, MessageCircle, Sparkles, UtensilsCrossed, Zap } from "lucide-react";
 import { NavLink } from "react-router-dom";
-import "./WhatIsMibishel.css";
+import "./WhatIsJoyi.css";
 
 const steps = [
     {
         icon: Link2,
         number: "01",
         title: "Paste a link",
-        body: "Copy any TikTok, Instagram, or Facebook recipe video URL and paste it into the Mibishel input.",
+        body: "Copy any TikTok, Instagram, or Facebook recipe video URL and paste it into the Joyi input.",
     },
     {
         icon: Zap,
@@ -66,7 +66,7 @@ function AnimatedSection({ children, className = "", style }: { children: React.
     );
 }
 
-export function WhatIsMibishel() {
+export function WhatIsJoyi() {
     return (
         <div className="WID">
             {/* ── Hero ─────────────────────────────────────────── */}
@@ -76,13 +76,13 @@ export function WhatIsMibishel() {
                     <UtensilsCrossed className="WID__heroUtensils" strokeWidth={1.4} />
                 </div>
                 <AnimatedSection className="WID__heroContent">
-                    <span className="WID__eyebrow">About Mibishel</span>
+                    <span className="WID__eyebrow">About Joyi</span>
                     <h1 className="WID__heroTitle">
                         Your social feed<br />
                         is a <em>cookbook</em>.
                     </h1>
                     <p className="WID__heroSub">
-                        Mibishel turns messy recipe captions from TikTok, Instagram, and Facebook
+                        Joyi turns messy recipe captions from TikTok, Instagram, and Facebook
                         into a clean, searchable personal cookbook — then lets you ask an AI assistant
                         anything about each dish.
                     </p>
@@ -161,7 +161,7 @@ export function WhatIsMibishel() {
                         <p className="WID__creatorBio">
                             Student at <strong>John Bryce Academy</strong>, building full-stack applications
                             with a focus on AI integration, automation, and clean product design.
-                            Mibishel is a personal project that combines all three.
+                            Joyi is a personal project that combines all three.
                         </p>
                         <a
                             className="WID__creatorGithub"

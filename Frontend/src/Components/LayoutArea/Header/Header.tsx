@@ -14,7 +14,7 @@ export function Header() {
                 <span className="brand-logo__mark" aria-hidden="true">
                     <img src={logo} alt="" />
                 </span>
-                <span className="brand-logo__word">Mibishel</span>
+                <span className="brand-logo__word">Joyi</span>
             </NavLink>
 
             <nav className="Header__nav" aria-label="Main navigation">

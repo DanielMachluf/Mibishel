@@ -206,7 +206,7 @@ export function LandingPage() {
                     <span className="brand-logo__mark" aria-hidden="true">
                         <img src={logo} alt="" />
                     </span>
-                    <span className="brand-logo__word">Mibishel</span>
+                    <span className="brand-logo__word">Joyi</span>
                 </Link>
                 <nav aria-label="Footer navigation">
                     <Link to="/">Home</Link>

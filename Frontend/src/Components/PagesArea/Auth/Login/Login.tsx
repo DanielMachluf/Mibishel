@@ -26,7 +26,7 @@ export function Login() {
         try {
             const token = await authService.login({ email, password });
             authStore.login(token);
-            notify.success("Welcome back to Mibishel.");
+            notify.success("Welcome back to Joyi.");
             navigate("/dashboard");
         }
         catch (err: unknown) {
@@ -59,7 +59,7 @@ export function Login() {
                         <span className="brand-logo__mark" aria-hidden="true">
                             <img src={logo} alt="" />
                         </span>
-                        <span className="brand-logo__word">Mibishel</span>
+                        <span className="brand-logo__word">Joyi</span>
                     </Link>
                 </div>
                 <p className="AuthCard__slogan">Your social Cookbook</p>
@@ -106,7 +106,7 @@ export function Login() {
                 </button>
 
                 <p className="Login__switch AuthSwitch">
-                    New to Mibishel? <Link to="/register">Create an account</Link>
+                    New to Joyi? <Link to="/register">Create an account</Link>
                 </p>
             </form>
 

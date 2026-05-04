@@ -1,8 +1,8 @@
-# Mibishel
+# Joyi
 
 > Save social recipe videos as a personal cookbook, then ask an AI assistant for recipe-specific help.
 
-Mibishel is a full-stack recipe collection app built around a simple idea: paste a recipe link from TikTok, Instagram, or Facebook, let automation extract the useful cooking data, and keep the result in a clean private dashboard.
+Joyi is a full-stack recipe collection app built around a simple idea: paste a recipe link from TikTok, Instagram, or Facebook, let automation extract the useful cooking data, and keep the result in a clean private dashboard.
 
 The project is split into a React/Vite frontend, an Express/TypeScript backend, a MySQL database layer, and n8n workflows that handle recipe scraping and AI responses.
 
@@ -155,7 +155,7 @@ PORT=4000
 MYSQL_HOST=localhost
 MYSQL_USER=root
 MYSQL_PASSWORD=your_mysql_password
-MYSQL_DATABASE=mibishel
+MYSQL_DATABASE=joyi
 
 HASH_SALT=replace_with_a_long_random_salt
 JWT_SECRET=replace_with_a_long_random_secret
@@ -245,8 +245,8 @@ The backend expects a MySQL database. The `Database/` folder is currently reserv
 A compatible schema should include at least:
 
 ```sql
-create database if not exists mibishel;
-use mibishel;
+create database if not exists joyi;
+use joyi;
 
 create table users (
     userId int primary key auto_increment,
@@ -460,7 +460,7 @@ interface RecipeModel {
 
 ## Current Notes
 
-- The backend package name still says `northwind-rest-api`; the frontend package name still says `northwind`. The app itself is built as Mibishel.
+- The backend package name still says `northwind-rest-api`; the frontend package name still says `northwind`. The app itself is built as Joyi.
 - `Database/schema.sql` contains the local MySQL schema used by the backend.
 - `Backend/.env.example` documents the required local environment variables.
 - The n8n workflows are required for the core save-recipe and ask-Joy features to work.
@@ -469,6 +469,6 @@ interface RecipeModel {
 
 ## Suggested Next Improvements
 
-- Rename package metadata from the old Northwind names to Mibishel.
+- Rename package metadata from the old Northwind names to Joyi.
 - Add automated tests for the n8n parser and service validation.
 - Add request rate limiting around auth and n8n webhook routes.

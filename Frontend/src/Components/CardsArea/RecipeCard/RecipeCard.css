@@ -115,6 +115,40 @@
     background: var(--card-facebook);
 }
 
+.RecipeCard__actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.RecipeCard__edit {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    color: var(--card-brown);
+    background: rgba(255, 255, 252, 0.78);
+    border: 1px solid rgba(42, 105, 86, 0.22);
+    border-radius: 8px;
+    font-size: 0.96rem;
+    opacity: 0;
+    transform: translateY(-3px);
+    cursor: pointer;
+    transition: opacity 150ms ease, transform 150ms ease, background 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.RecipeCard:hover .RecipeCard__edit,
+.RecipeCard__edit:focus-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.RecipeCard__edit:hover {
+    color: #ffffff;
+    background: var(--card-brown);
+    border-color: var(--card-brown);
+}
+
 .RecipeCard__delete {
     display: grid;
     place-items: center;

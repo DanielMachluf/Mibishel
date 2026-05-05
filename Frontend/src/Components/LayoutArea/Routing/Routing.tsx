@@ -10,7 +10,8 @@ import { LandingPage } from "../../PagesArea/LandingPage/LandingPage";
 import { WhatIsJoyi } from "../../PagesArea/WhatIsJoyi/WhatIsJoyi";
 import { Page404 } from "../../PagesArea/Page404/Page404";
 import { Profile } from "../../PagesArea/Profile/Profile";
-import { RecipePage } from "../../PagesArea/RecipePage/RecipePage";
+import { RecipePage } from "../../PagesArea/RecipeArea/RecipePage/RecipePage";
+import { EditRecipe } from "../../PagesArea/RecipeArea/EditRecipe/EditRecipe";
 
 interface RouteGuardProps {
     children: React.ReactElement;
@@ -39,6 +40,7 @@ export function Routing() {
             <Route path="/profile" element={<ProtectedRoute><DashboardArea><Profile /></DashboardArea></ProtectedRoute>} />
             <Route path="/about" element={<ProtectedRoute><DashboardArea><WhatIsJoyi /></DashboardArea></ProtectedRoute>} />
             <Route path="/recipe/:id" element={<ProtectedRoute><RecipePage /></ProtectedRoute>} />
+            <Route path="/recipe/:id/edit" element={<ProtectedRoute><EditRecipe /></ProtectedRoute>} />
             <Route path="*" element={<Page404 />} />
         </Routes>
     );

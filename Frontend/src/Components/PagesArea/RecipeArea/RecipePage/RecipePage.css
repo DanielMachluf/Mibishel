@@ -84,11 +84,18 @@
     cursor: pointer;
 }
 
+.RecipePage__topBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 34px;
+}
+
 .RecipePage__back {
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    margin: 0 0 34px;
+    margin: 0;
     padding: 0;
     color: var(--recipe-brown-dark);
     background: transparent;
@@ -97,6 +104,28 @@
     font-weight: 900;
     cursor: pointer;
     transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.RecipePage__editBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background: var(--recipe-brown);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(45, 107, 88, 0.28);
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.RecipePage__editBtn:hover {
+    background: var(--recipe-brown-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(45, 107, 88, 0.38);
 }
 
 .RecipePage__back:hover {

@@ -11,6 +11,7 @@ class RecipeController {
         this.router.post("/api/recipes/scrape", securityMiddleware.verifyToken, securityMiddleware.webhookLimiter, securityMiddleware.preventXss, this.scrapeAndSave);
         this.router.get("/api/recipes", securityMiddleware.verifyToken, this.getAllRecipes);
         this.router.get("/api/recipes/:id", securityMiddleware.verifyToken, this.getRecipeById);
+        this.router.put("/api/recipes/:id", securityMiddleware.verifyToken, securityMiddleware.preventXss, this.updateRecipe);
         this.router.delete("/api/recipes/:id", securityMiddleware.verifyToken, this.deleteRecipe);
     }
 
@@ -55,6 +56,19 @@ class RecipeController {
             const userId = this.getUserId(request);
             await recipeService.deleteRecipe(recipeId, userId);
             response.sendStatus(StatusCode.NoContent);
+        }
+        catch (err: unknown) {
+            next(err);
+        }
+    };
+
+    private updateRecipe = async (request: Request, response: Response, next: NextFunction) => {
+        try {
+            const recipeId = +request.params.id;
+            const userId = this.getUserId(request);
+            const updates = request.body;
+            const recipe = await recipeService.updateRecipe(recipeId, userId, updates);
+            response.status(StatusCode.OK).json(recipe);
         }
         catch (err: unknown) {
             next(err);

@@ -28,6 +28,10 @@ class RecipeService {
         await axios.delete(`${appConfig.apiUrl}/recipes/${id}`, createAuthConfig());
     }
 
+    public async updateRecipe(id: number, data: Partial<RecipeModel>): Promise<RecipeModel> {
+        const response = await axios.put<RecipeModel>(`${appConfig.apiUrl}/recipes/${id}`, data, createAuthConfig());
+        return normalizeRecipe(response.data);
+    }
 
 }
 

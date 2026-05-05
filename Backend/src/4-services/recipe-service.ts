@@ -106,6 +106,47 @@ class RecipeService {
         return recipe;
     }
 
+    public async updateRecipe(recipeId: number, userId: number, updates: Partial<RecipeModel>): Promise<RecipeModel> {
+
+        // Verify ownership before updating.
+        await this.getRecipeById(recipeId, userId);
+
+        type EditableField = "title" | "instructions" | "servings" | "thumbnail" |
+            "totalCalories" | "caloriesPerServing" |
+            "protein" | "carbs" | "fats" |
+            "proteinPerServing" | "carbsPerServing" | "fatsPerServing" | "ingredients";
+
+        const allowedFields: EditableField[] = [
+            "title", "instructions", "servings", "thumbnail",
+            "totalCalories", "caloriesPerServing",
+            "protein", "carbs", "fats",
+            "proteinPerServing", "carbsPerServing", "fatsPerServing", "ingredients"
+        ];
+
+        const setClauses: string[] = [];
+        const values: (string | number | null)[] = [];
+
+        for (const field of allowedFields) {
+            if (!(field in updates)) continue;
+            if (field === "ingredients") {
+                setClauses.push("ingredients = ?");
+                values.push(JSON.stringify(updates.ingredients));
+            } else {
+                setClauses.push(`${field} = ?`);
+                const raw = updates[field as keyof Partial<RecipeModel>];
+                values.push(raw === undefined ? null : (raw as string | number | null));
+            }
+        }
+
+        if (setClauses.length === 0) throw new ValidationError("No valid fields to update.");
+
+        values.push(recipeId, userId);
+        const sql = `update recipes set ${setClauses.join(", ")} where recipeId = ? and userId = ?`;
+        await dal.execute(sql, values) as OkPacket;
+
+        return this.getRecipeById(recipeId, userId);
+    }
+
     public async deleteRecipe(recipeId: number, userId: number): Promise<void> {
 
         // Verify ownership before deleting.

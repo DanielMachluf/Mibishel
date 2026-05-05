@@ -1,5 +1,5 @@
 import { MouseEvent, useState } from "react";
-import { Camera, Droplets, Flame, Music2, ThumbsUp, Users, Wheat, Dumbbell } from "lucide-react";
+import { Camera, Droplets, Flame, Music2, Pencil, ThumbsUp, Users, Wheat, Dumbbell } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import type { RecipeModel } from "../../../Models/recipe-model";
 import "./RecipeCard.css";
@@ -33,6 +33,11 @@ export function RecipeCard({ recipe, onDelete, accentIndex = 0 }: RecipeCardProp
         setConfirmDelete(false);
     }
 
+    function navigateToEdit(event: MouseEvent<HTMLButtonElement>): void {
+        event.stopPropagation();
+        navigate(`/recipe/${recipe.recipeId}/edit`);
+    }
+
     function confirmAndDelete(event: MouseEvent<HTMLButtonElement>): void {
         event.stopPropagation();
         onDelete(recipe.recipeId);
@@ -53,14 +58,24 @@ export function RecipeCard({ recipe, onDelete, accentIndex = 0 }: RecipeCardProp
                         <button className="RecipeCard__confirmNo" onClick={cancelDelete} aria-label="Cancel delete">No</button>
                     </div>
                 ) : (
-                    <button
-                        className="RecipeCard__delete"
-                        onClick={askConfirm}
-                        aria-label={`Delete ${recipe.title}`}
-                        title="Delete recipe"
-                    >
-                        ✕
-                    </button>
+                    <div className="RecipeCard__actions">
+                        <button
+                            className="RecipeCard__edit"
+                            onClick={navigateToEdit}
+                            aria-label={`Edit ${recipe.title}`}
+                            title="Edit recipe"
+                        >
+                            <Pencil size={13} />
+                        </button>
+                        <button
+                            className="RecipeCard__delete"
+                            onClick={askConfirm}
+                            aria-label={`Delete ${recipe.title}`}
+                            title="Delete recipe"
+                        >
+                            ✕
+                        </button>
+                    </div>
                 )}
             </header>
 

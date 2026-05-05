@@ -1,9 +1,9 @@
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
-import type { RecipeContext } from "../../Models/ai-model";
-import type { RecipeModel } from "../../Models/recipe-model";
-import { aiService } from "../../Services/AiService";
-import { notify } from "../../Utils/Notify";
-import joyAssistantImage from "../../assets/PNG/joyi-favicon-and-ai.png";
+import type { RecipeContext } from "../../../../Models/ai-model";
+import type { RecipeModel } from "../../../../Models/recipe-model";
+import { aiService } from "../../../../Services/AiService";
+import { notify } from "../../../../Utils/Notify";
+import joyAssistantImage from "../../../../assets/PNG/joyi-favicon-and-ai.png";
 import "./RecipeJoyAssistant.css";
 
 interface RecipeJoyAssistantProps {

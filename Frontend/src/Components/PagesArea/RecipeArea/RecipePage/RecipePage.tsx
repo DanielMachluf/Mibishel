@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { Camera, ChefHat, Droplets, Flame, Leaf, Music2, Sparkles, ThumbsUp, Users, UtensilsCrossed, Wheat, Dumbbell } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
-import type { RecipeModel } from "../../../Models/recipe-model";
-import { recipeService } from "../../../Services/RecipeService";
-import { appConfig } from "../../../Utils/AppConfig";
-import { notify } from "../../../Utils/Notify";
-import { RecipeJoyAssistant } from "../../RecipeJoyAssistant/RecipeJoyAssistant";
+import type { RecipeModel } from "../../../../Models/recipe-model";
+import { recipeService } from "../../../../Services/RecipeService";
+import { appConfig } from "../../../../Utils/AppConfig";
+import { notify } from "../../../../Utils/Notify";
+import { RecipeJoyAssistant } from "../RecipeJoyAssistant/RecipeJoyAssistant";
 import "./RecipePage.css";
 
 const fallbackImage = "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=85";
@@ -107,10 +107,20 @@ export function RecipePage() {
     return (
         <article className="RecipePage">
             <div className="RecipePage__shell">
-                <button className="RecipePage__back" onClick={() => navigate(-1)}>
-                    <span aria-hidden="true">←</span>
-                    Back to recipes
-                </button>
+                <div className="RecipePage__topBar">
+                    <button className="RecipePage__back" onClick={() => navigate(-1)}>
+                        <span aria-hidden="true">←</span>
+                        Back to recipes
+                    </button>
+                    <button
+                        className="RecipePage__editBtn"
+                        onClick={() => navigate(`/recipe/${recipeDetails.recipeId}/edit`)}
+                        type="button"
+                    >
+                        <span aria-hidden="true">✎</span>
+                        Edit Recipe
+                    </button>
+                </div>
 
                 <section className="RecipePage__hero">
                     <figure className="RecipePage__photoFrame">

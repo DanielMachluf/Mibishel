@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Crown, Folder, Heart, Home, Info, Leaf, LogOut, UserRound, UtensilsCrossed } from "lucide-react";
+import { ArrowRight, Crown, Folder, Heart, Home, Info, Leaf, LogOut, Menu, UserRound, UtensilsCrossed } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../../../assets/PNG/Joyi-logo.png";
 import { authStore, useAuthStore } from "../../../../store/authStore";
@@ -53,18 +53,16 @@ export function DashboardNavbar() {
                 aria-label="Toggle dashboard menu"
                 onClick={() => setIsMenuOpen(current => !current)}
             >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 6h16" />
-                    <path d="M4 12h16" />
-                    <path d="M4 18h16" />
-                </svg>
+                <Menu size={22} strokeWidth={2} aria-hidden="true" />
             </button>
 
             <div className="DashboardNavbar__panel">
                 <NavLink to="/dashboard" className="DashboardNavbar__brand" aria-label="Joyi dashboard" onClick={closeMenu}>
-                    <span className="DashboardNavbar__brandMark" aria-hidden="true">
-                        <img src={logo} alt="" />
-                    </span>
+                    <img className="DashboardNavbar__brandLogo" src={logo} alt="Joyi logo" />
+                    <div className="DashboardNavbar__brandText">
+                        <span className="DashboardNavbar__brandName">Joyi</span>
+                        <span className="DashboardNavbar__brandTagline">Your Social Cookbook</span>
+                    </div>
                 </NavLink>
 
                 <nav className="DashboardNavbar__nav">

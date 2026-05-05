@@ -10,9 +10,11 @@ import type { RecipeModel } from "../../../../Models/recipe-model";
 import { recipeService } from "../../../../Services/RecipeService";
 import { authStore, useAuthStore } from "../../../../store/authStore";
 import { notify } from "../../../../Utils/Notify";
+import { usePagination } from "../../../../Utils/usePagination";
 import "./Dashboard.css";
 
 type PlatformFilter = "all" | "tiktok" | "instagram" | "facebook";
+const RECIPES_PER_PAGE = 9;
 
 export function Dashboard() {
     const { user } = useAuthStore();
@@ -31,6 +33,22 @@ export function Dashboard() {
         const matchesPlatform = platformFilter === "all" || recipe.platform === platformFilter;
         return matchesText && matchesPlatform;
     });
+
+    const {
+        currentPage,
+        totalPages,
+        paginatedItems,
+        canNext,
+        canPrev,
+        setPage,
+        nextPage,
+        prevPage,
+        resetPage,
+    } = usePagination(filteredRecipes, RECIPES_PER_PAGE);
+
+    useEffect(() => {
+        resetPage();
+    }, [searchQuery, platformFilter, resetPage]);
 
     function clearFilters(): void {
         setSearchQuery("");
@@ -227,17 +245,55 @@ export function Dashboard() {
                         <strong>Loading your saved recipes...</strong>
                     </div>
                 ) : filteredRecipes.length > 0 || isSaving ? (
-                    <section className="Dashboard__grid" aria-label="Saved recipes">
-                        {isSaving && <RecipeCookingCard />}
-                        {filteredRecipes.map((recipe, index) => (
-                            <RecipeCard
-                                key={recipe.recipeId}
-                                recipe={recipe}
-                                onDelete={deleteRecipe}
-                                accentIndex={index}
-                            />
-                        ))}
-                    </section>
+                    <>
+                        <section className="Dashboard__grid" aria-label="Saved recipes">
+                            {isSaving && <RecipeCookingCard />}
+                            {paginatedItems.map((recipe, index) => (
+                                <RecipeCard
+                                    key={recipe.recipeId}
+                                    recipe={recipe}
+                                    onDelete={deleteRecipe}
+                                    accentIndex={(currentPage - 1) * RECIPES_PER_PAGE + index}
+                                />
+                            ))}
+                        </section>
+
+                        {totalPages > 1 && (
+                            <nav className="Dashboard__pagination" aria-label="Recipes pagination">
+                                <button
+                                    type="button"
+                                    className="Dashboard__pageButton"
+                                    onClick={prevPage}
+                                    disabled={!canPrev}
+                                >
+                                    Previous
+                                </button>
+
+                                <div className="Dashboard__pageNumbers">
+                                    {Array.from({ length: totalPages }, (_, index) => index + 1).map(page => (
+                                        <button
+                                            key={page}
+                                            type="button"
+                                            className={`Dashboard__pageNumber${page === currentPage ? " Dashboard__pageNumber--active" : ""}`}
+                                            onClick={() => setPage(page)}
+                                            aria-current={page === currentPage ? "page" : undefined}
+                                        >
+                                            {page}
+                                        </button>
+                                    ))}
+                                </div>
+
+                                <button
+                                    type="button"
+                                    className="Dashboard__pageButton"
+                                    onClick={nextPage}
+                                    disabled={!canNext}
+                                >
+                                    Next
+                                </button>
+                            </nav>
+                        )}
+                    </>
                 ) : recipes.length > 0 ? (
                     <section className="Dashboard__noResults">
                         <p>No recipes match your search.</p>
